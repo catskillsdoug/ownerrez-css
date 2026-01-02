@@ -113,9 +113,13 @@ h2.media-heading a {
 }
 
 /* ============================================
-   AMENITIES
+   AMENITIES / PROPERTY TEXT
    ============================================ */
 .amenity-summary-amenities {
+  padding-right: 15% !important;
+}
+
+.media-body {
   padding-right: 15% !important;
 }
 
@@ -126,6 +130,10 @@ h2.media-heading a {
   .amenity-summary-amenities {
     padding-right: 10% !important;
   }
+
+  .media-body {
+    padding-right: 10% !important;
+  }
 }
 
 /* ============================================
@@ -133,6 +141,10 @@ h2.media-heading a {
    ============================================ */
 @media (max-width: 767px) {
   .amenity-summary-amenities {
+    padding-right: 5% !important;
+  }
+
+  .media-body {
     padding-right: 5% !important;
   }
 
