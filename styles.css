@@ -131,6 +131,14 @@ a:hover {
   justify-content: space-between !important;
 }
 
+/* Logo/brand image - reduce height */
+.navbar-brand.has-brand-image,
+.navbar-brand.has-brand-image img {
+  height: 45px !important;
+  max-height: 45px !important;
+  width: auto !important;
+}
+
 /* Button in header - restore padding */
 [id^="header-line-"] a {
   padding: 8px 16px !important;
