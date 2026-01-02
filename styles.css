@@ -71,6 +71,12 @@ h4.hidden-xs {
 /* ============================================
    DATEPICKER
    ============================================ */
+.datepicker {
+  box-shadow: none !important;
+  margin-left: 15px !important;
+  margin-right: 15px !important;
+}
+
 .datepicker td.day,
 .datepicker .day {
   width: 50px !important;
