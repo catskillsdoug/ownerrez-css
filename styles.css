@@ -117,6 +117,17 @@ h2.media-heading a {
    ============================================ */
 .row.search-bar {
   margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.search-bar {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.search-bar-container {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 /* ============================================
