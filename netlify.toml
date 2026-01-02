@@ -1,0 +1,11 @@
+# Netlify configuration
+
+[build]
+  publish = "."
+
+# Headers for CORS and caching
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Cache-Control = "public, max-age=300"
