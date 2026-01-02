@@ -1,5 +1,22 @@
 /* OwnerRez Custom CSS for reset-new-brand.hosted.ownerrez.com */
-/* Hosted on Netlify - Managed by Claude Code */
+/* Swiss Design System - Managed by Claude Code */
 
-/* Add your custom styles below */
+/* ============================================
+   STEP 1: GLOBAL RESETS
+   Swiss design: no rounded corners, consistent box model
+   ============================================ */
+
+/* Remove ALL rounded corners */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* Consistent box model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
