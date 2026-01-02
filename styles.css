@@ -72,14 +72,27 @@ h4.hidden-xs {
    RESPONSIVE - MOBILE
    ============================================ */
 @media (max-width: 767px) {
-  .carousel-inner {
+  /* Hero carousel - force 4:5 aspect ratio */
+  .hero-carousel,
+  .hero-carousel .carousel-inner {
     aspect-ratio: 4 / 5 !important;
+    height: auto !important;
     overflow: hidden !important;
   }
 
-  .carousel-inner .item,
-  .carousel-inner .fill {
+  .hero-carousel .item {
+    padding-bottom: 0 !important;
     height: 100% !important;
+  }
+
+  .hero-carousel .fill {
+    padding-bottom: 0 !important;
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
   }
 }
 
