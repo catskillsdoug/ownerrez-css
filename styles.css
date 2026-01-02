@@ -120,6 +120,21 @@ h2.media-heading a {
   color: #000000 !important;
 }
 
+.form-control::placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+.form-control::-webkit-input-placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
+.form-control::-moz-placeholder {
+  color: #000000 !important;
+  opacity: 1 !important;
+}
+
 /* ============================================
    AMENITIES / PROPERTY TEXT
    ============================================ */
