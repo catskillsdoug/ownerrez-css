@@ -113,6 +113,13 @@ h2.media-heading a {
 }
 
 /* ============================================
+   FORM CONTROLS
+   ============================================ */
+.form-control {
+  font-weight: 700 !important;
+}
+
+/* ============================================
    AMENITIES / PROPERTY TEXT
    ============================================ */
 .amenity-summary-amenities {
