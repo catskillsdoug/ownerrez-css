@@ -69,6 +69,17 @@ h4.hidden-xs {
 }
 
 /* ============================================
+   DATEPICKER
+   ============================================ */
+.datepicker td.day,
+.datepicker .day {
+  width: 36px !important;
+  height: 36px !important;
+  line-height: 36px !important;
+  aspect-ratio: 1 / 1 !important;
+}
+
+/* ============================================
    RESPONSIVE - MOBILE
    ============================================ */
 @media (max-width: 767px) {
