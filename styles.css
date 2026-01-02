@@ -1,5 +1,382 @@
 /* OwnerRez Custom CSS for reset-new-brand.hosted.ownerrez.com */
-/* Hosted on Netlify - Managed by Claude Code */
+/* Swiss Design System - Managed by Claude Code */
 
-/* Add your custom styles below */
+/* ============================================
+   CSS VARIABLES - Design Tokens
+   ============================================ */
+:root {
+  /* Typography */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --font-size-base: 16px;
+  --font-size-meta: 14px;
+  --font-size-caption: 12px;
+  --line-height: 1.6;
+  --letter-spacing-tight: -0.01em;
+  --letter-spacing-wide: 0.05em;
 
+  /* Font Weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Spacing - 8px rhythm */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+  --space-4xl: 96px;
+
+  /* Colors */
+  --color-bg: #fcf6e9;
+  --color-text: #000000;
+  --color-border: #000000;
+  --color-white: #ffffff;
+
+  /* Borders */
+  --border-width: 1px;
+  --border-style: solid;
+  --border: var(--border-width) var(--border-style) var(--color-border);
+
+  /* Layout */
+  --max-width: 1200px;
+  --gutter: var(--space-lg);
+
+  /* Image Aspect Ratios */
+  --aspect-landscape: 16 / 9;
+  --aspect-portrait: 4 / 5;
+  --aspect-standard: 4 / 3;
+}
+
+/* ============================================
+   BASE RESET & TYPOGRAPHY
+   ============================================ */
+body {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height);
+  color: var(--color-text);
+  background-color: var(--color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Three-Level Typography Hierarchy */
+
+/* Level 1: Primary Headers - Uppercase, tight tracking */
+h1,
+.property-name,
+.site-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-bold);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-tight);
+  line-height: 1.2;
+  margin: 0 0 var(--space-md) 0;
+}
+
+/* Level 2: Secondary Headers - Normal case, medium weight */
+h2, h3, h4, h5, h6,
+.section-title {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+  text-transform: none;
+  letter-spacing: normal;
+  line-height: 1.4;
+  margin: 0 0 var(--space-sm) 0;
+}
+
+/* Level 3: Meta/Caption - Small, uppercase, wide tracking */
+.meta,
+.caption,
+.amenity-list-item,
+small,
+.property-details,
+.result-page,
+.sort-selector {
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-normal);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  line-height: 1.4;
+}
+
+/* Body text */
+p {
+  margin: 0 0 var(--space-md) 0;
+}
+
+/* Links */
+a {
+  color: var(--color-text);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+[id^="header-line-"] {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: var(--border);
+}
+
+/* ============================================
+   SEARCH WIDGET
+   ============================================ */
+#search-bar-widget {
+  padding: var(--space-lg);
+  border: var(--border);
+  margin: var(--space-lg) 0;
+}
+
+#search-bar-widget input,
+#search-bar-widget select,
+#search-bar-widget button {
+  font-family: var(--font-family);
+  font-size: var(--font-size-meta);
+  padding: var(--space-sm) var(--space-md);
+  border: var(--border);
+  background: var(--color-white);
+}
+
+#search-bar-widget button,
+.search-bar-button button {
+  background: var(--color-text);
+  color: var(--color-white);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  cursor: pointer;
+  border: var(--border);
+  padding: var(--space-sm) var(--space-lg);
+}
+
+#search-bar-widget button:hover,
+.search-bar-button button:hover {
+  background: var(--color-white);
+  color: var(--color-text);
+}
+
+/* ============================================
+   PROPERTY CARDS / LISTINGS
+   ============================================ */
+
+/* Property card container */
+.property-card,
+.property-listing,
+[class*="property"] {
+  padding: var(--space-lg);
+  margin-bottom: var(--space-lg);
+  border: var(--border);
+}
+
+/* Property images - enforce aspect ratio */
+.or-carousel,
+.property-image,
+[class*="carousel"] {
+  aspect-ratio: var(--aspect-landscape);
+  overflow: hidden;
+  border: var(--border);
+  margin-bottom: var(--space-md);
+}
+
+.or-carousel img,
+.property-image img,
+[class*="carousel"] img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Images with background-image */
+[style*="background-image"] {
+  aspect-ratio: var(--aspect-landscape);
+  background-size: cover;
+  background-position: center;
+}
+
+/* Property content area */
+.property-content,
+.property-details {
+  padding: var(--space-md) 0;
+}
+
+/* Property action links */
+.property-actions a,
+.property-links a {
+  display: inline-block;
+  font-size: var(--font-size-caption);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  margin-right: var(--space-md);
+  padding: var(--space-xs) 0;
+}
+
+/* ============================================
+   CONTENT CONTAINERS
+   ============================================ */
+#content,
+.content,
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+/* Section spacing */
+section,
+.section {
+  padding: var(--space-2xl) 0;
+  border-bottom: var(--border);
+}
+
+section:last-child,
+.section:last-child {
+  border-bottom: none;
+}
+
+/* ============================================
+   HORIZONTAL RULES / DIVIDERS
+   ============================================ */
+hr {
+  border: none;
+  border-top: var(--border);
+  margin: var(--space-2xl) 0;
+}
+
+/* ============================================
+   BUTTONS & INTERACTIVE ELEMENTS
+   ============================================ */
+button,
+.button,
+input[type="submit"],
+input[type="button"] {
+  font-family: var(--font-family);
+  font-size: var(--font-size-caption);
+  font-weight: var(--font-weight-medium);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  padding: var(--space-sm) var(--space-lg);
+  background: var(--color-text);
+  color: var(--color-white);
+  border: var(--border);
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+button:hover,
+.button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+  background: var(--color-white);
+  color: var(--color-text);
+}
+
+/* ============================================
+   FORM ELEMENTS
+   ============================================ */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="number"],
+select,
+textarea {
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  padding: var(--space-sm) var(--space-md);
+  border: var(--border);
+  background: var(--color-white);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--color-text);
+  outline-offset: 2px;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer,
+[class*="footer"] {
+  padding: var(--space-2xl) var(--space-lg);
+  border-top: var(--border);
+  margin-top: var(--space-2xl);
+}
+
+footer a {
+  font-size: var(--font-size-caption);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-wide);
+  margin-right: var(--space-lg);
+}
+
+/* ============================================
+   LISTS
+   ============================================ */
+ul, ol {
+  margin: 0 0 var(--space-md) 0;
+  padding-left: var(--space-lg);
+}
+
+li {
+  margin-bottom: var(--space-xs);
+}
+
+/* Inline lists (navigation, amenities) */
+.inline-list,
+.amenity-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+/* ============================================
+   UTILITIES
+   ============================================ */
+
+/* Consistent box model */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margins on images */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ============================================
+   RESPONSIVE
+   ============================================ */
+@media (max-width: 768px) {
+  :root {
+    --space-lg: 16px;
+    --space-2xl: 32px;
+  }
+
+  /* Stack property images to portrait on mobile */
+  .or-carousel,
+  .property-image,
+  [class*="carousel"],
+  [style*="background-image"] {
+    aspect-ratio: var(--aspect-portrait);
+  }
+}
