@@ -123,8 +123,26 @@ a:hover {
    HEADER
    ============================================ */
 [id^="header-line-"] {
-  padding: var(--space-md) var(--space-lg);
+  padding: var(--space-sm) var(--space-lg);
   border-bottom: var(--border);
+}
+
+/* Logo/Site title - reduce vertical space */
+[id^="header-line-"] h1,
+[id^="header-line-"] h2,
+[id^="header-line-"] h3,
+[id^="header-line-"] a {
+  margin: 0;
+  padding: var(--space-xs) 0;
+  line-height: 1;
+}
+
+/* Reduce header row height */
+header,
+.header,
+[class*="header"] {
+  padding-top: var(--space-sm);
+  padding-bottom: var(--space-sm);
 }
 
 /* ============================================
@@ -354,6 +372,13 @@ li {
 *::before,
 *::after {
   box-sizing: border-box;
+}
+
+/* Swiss design: NO rounded corners anywhere */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
 }
 
 /* Remove default margins on images */
