@@ -75,8 +75,14 @@ h4.hidden-xs {
 .datepicker .day {
   width: 50px !important;
   height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  max-width: 50px !important;
+  max-height: 50px !important;
   line-height: 50px !important;
-  aspect-ratio: 1 / 1 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  text-align: center !important;
 }
 
 /* ============================================
