@@ -123,26 +123,25 @@ a:hover {
    HEADER
    ============================================ */
 [id^="header-line-"] {
-  padding: var(--space-sm) var(--space-lg);
-  border-bottom: var(--border);
+  padding: var(--space-xs) var(--space-lg) !important;
+  margin: 0 !important;
+  min-height: 0 !important;
+  line-height: 1 !important;
 }
 
-/* Logo/Site title - reduce vertical space */
-[id^="header-line-"] h1,
-[id^="header-line-"] h2,
-[id^="header-line-"] h3,
-[id^="header-line-"] a {
-  margin: 0;
-  padding: var(--space-xs) 0;
-  line-height: 1;
+/* Logo/Site title - compact */
+[id^="header-line-"] * {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1 !important;
+  font-size: var(--font-size-caption) !important;
 }
 
-/* Reduce header row height */
+/* Header container */
 header,
 .header,
 [class*="header"] {
-  padding-top: var(--space-sm);
-  padding-bottom: var(--space-sm);
+  padding: 0;
 }
 
 /* ============================================
