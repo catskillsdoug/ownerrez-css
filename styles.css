@@ -28,3 +28,14 @@
   margin: 10px !important;
 }
 
+/* ============================================
+   HERO CAROUSEL
+   ============================================ */
+.carousel.slide.carousel-fade.or-carousel.hero-carousel,
+.or-carousel.hero-carousel,
+.hero-carousel {
+  border: none !important;
+  margin-bottom: 0 !important;
+  box-shadow: none !important;
+}
+
