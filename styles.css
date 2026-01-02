@@ -50,3 +50,17 @@
   display: none !important;
 }
 
+/* ============================================
+   PROPERTY THUMBNAILS
+   ============================================ */
+.thumbnail {
+  aspect-ratio: 4 / 5 !important;
+  overflow: hidden !important;
+}
+
+.thumbnail img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
