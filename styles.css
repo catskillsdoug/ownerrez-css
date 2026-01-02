@@ -94,7 +94,7 @@ h4.hidden-xs {
 /* ============================================
    BUTTONS
    ============================================ */
-.btn.btn-default {
+.btn-group .btn.btn-default {
   border: 1px solid #000000 !important;
 }
 
