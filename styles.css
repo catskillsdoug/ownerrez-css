@@ -50,6 +50,10 @@
   display: none !important;
 }
 
+.hidden-xs {
+  display: none !important;
+}
+
 /* ============================================
    PROPERTY THUMBNAILS
    ============================================ */
