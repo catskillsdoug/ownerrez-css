@@ -107,8 +107,9 @@ p .btn-group {
 /* ============================================
    TYPOGRAPHY
    ============================================ */
-h2.media-heading {
-  font-weight: 800 !important;
+h2.media-heading,
+h2.media-heading a {
+  font-weight: 700 !important;
 }
 
 /* ============================================
