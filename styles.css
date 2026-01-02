@@ -122,11 +122,14 @@ a:hover {
 /* ============================================
    HEADER
    ============================================ */
+/* Override inline styles with attribute selector + style attribute */
+[id^="header-line-"][style],
 [id^="header-line-"] {
-  padding: var(--space-xs) var(--space-lg) !important;
+  padding: 4px 24px !important;
   margin: 0 !important;
   min-height: 0 !important;
   line-height: 1 !important;
+  height: auto !important;
 }
 
 /* Logo/Site title - compact */
@@ -134,7 +137,6 @@ a:hover {
   margin: 0 !important;
   padding: 0 !important;
   line-height: 1 !important;
-  font-size: var(--font-size-caption) !important;
 }
 
 /* Header container */
@@ -143,6 +145,15 @@ header,
 [class*="header"] {
   padding: 0;
 }
+
+/* JavaScript override for inline styles - add to page */
+/*
+<script>
+document.querySelectorAll('[id^="header-line-"]').forEach(el => {
+  el.style.padding = '4px 24px';
+});
+</script>
+*/
 
 /* ============================================
    SEARCH WIDGET
