@@ -39,3 +39,10 @@
   box-shadow: none !important;
 }
 
+/* ============================================
+   HIDE ELEMENTS
+   ============================================ */
+.btn.btn-default.btn-xs.dropdown-toggle {
+  display: none !important;
+}
+
