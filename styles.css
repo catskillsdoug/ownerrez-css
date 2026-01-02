@@ -68,3 +68,18 @@ h4.hidden-xs {
   object-fit: cover !important;
 }
 
+/* ============================================
+   RESPONSIVE - MOBILE
+   ============================================ */
+@media (max-width: 767px) {
+  .carousel-inner {
+    aspect-ratio: 4 / 5 !important;
+    overflow: hidden !important;
+  }
+
+  .carousel-inner .item,
+  .carousel-inner .fill {
+    height: 100% !important;
+  }
+}
+
