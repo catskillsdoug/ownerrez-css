@@ -20,3 +20,20 @@
   box-sizing: border-box;
 }
 
+/* ============================================
+   HEADER / LOGO
+   ============================================ */
+
+/* Logo - reduce height */
+.navbar-brand.has-brand-image img {
+  height: 45px !important;
+  max-height: 45px !important;
+  width: auto !important;
+}
+
+/* Header rows - increase vertical padding */
+[id^="header-line-"] {
+  padding-top: 16px !important;
+  padding-bottom: 16px !important;
+}
+
