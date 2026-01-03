@@ -250,6 +250,24 @@ h1.page-header {
   padding-bottom: 0 !important;
 }
 
+/* Search bar form controls - match button styling */
+select#Bedrooms.form-control,
+select#Guests.form-control,
+input#ArrivalDate.form-control,
+input#DepartureDate.form-control,
+.input-group.date .form-control,
+.search-bar select.form-control,
+.search-bar input.form-control {
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  text-transform: uppercase !important;
+  border: 1px solid #000000 !important;
+  border-color: #000000 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
 /* ============================================
    FORM CONTROLS
    ============================================ */
