@@ -98,4 +98,15 @@ button.btn.btn-default.btn-block:active,
 .datepicker .prev,
 .datepicker .next {
   font-weight: 700 !important;
+  font-size: 0 !important;
+}
+
+.datepicker .prev::after {
+  content: "←" !important;
+  font-size: 16px !important;
+}
+
+.datepicker .next::after {
+  content: "→" !important;
+  font-size: 16px !important;
 }
