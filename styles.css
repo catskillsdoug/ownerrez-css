@@ -213,6 +213,7 @@ p .btn-group {
 #content .col-md-8 {
   padding-left: 0 !important;
   padding-right: 30px !important;
+  max-width: 600px !important;
 }
 
 #content .col-md-4.pull-right-md {
