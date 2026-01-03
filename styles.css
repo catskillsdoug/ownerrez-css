@@ -275,6 +275,19 @@ input#DepartureDate.form-control,
   padding-left: 12px !important;
 }
 
+/* Merge date input and calendar icon into one box */
+.input-group.date .form-control {
+  border-right: none !important;
+}
+
+.input-group.date .input-group-addon,
+.input-group.date a.btn.btn-default {
+  border-left: none !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  margin-left: -1px !important;
+}
+
 /* ============================================
    FORM CONTROLS
    ============================================ */
