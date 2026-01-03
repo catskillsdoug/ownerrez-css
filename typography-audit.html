@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Typography Audit - OwnerRez Reset Brand</title>
+  <style>
+    /* Reset */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1.5;
+      color: #000;
+      background: #f5f5f5;
+      padding: 40px;
+    }
+
+    .audit-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .audit-header {
+      margin-bottom: 60px;
+      padding-bottom: 30px;
+      border-bottom: 2px solid #000;
+    }
+
+    .audit-header h1 {
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .audit-header p {
+      font-size: 16px;
+      color: #666;
+    }
+
+    .section {
+      background: #fff;
+      padding: 40px;
+      margin-bottom: 30px;
+      border: 1px solid #ddd;
+    }
+
+    .section-title {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #999;
+      margin-bottom: 30px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eee;
+    }
+
+    .specimen {
+      margin-bottom: 40px;
+    }
+
+    .specimen:last-child {
+      margin-bottom: 0;
+    }
+
+    .specimen-label {
+      font-size: 11px;
+      font-weight: 400;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #999;
+      margin-bottom: 8px;
+    }
+
+    .specimen-meta {
+      font-size: 11px;
+      font-weight: 400;
+      color: #999;
+      margin-top: 8px;
+      font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+    }
+
+    /* =============================================
+       ACTUAL TYPOGRAPHY STYLES FROM THE SITE
+       ============================================= */
+
+    /* Headings */
+    .h1-page-header {
+      font-weight: 700;
+      font-size: 30px;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    .h2-media-heading {
+      font-weight: 700;
+      font-size: 30px;
+      letter-spacing: 0;
+      line-height: 1.2;
+    }
+
+    .h2-media-heading-link {
+      font-weight: 700;
+      font-size: 30px;
+      letter-spacing: 0;
+      line-height: 1.2;
+      color: #000;
+      text-decoration: none;
+    }
+
+    .h2-media-heading-link:hover {
+      text-decoration: underline;
+    }
+
+    /* Buttons */
+    .btn-default-sample {
+      font-size: 14px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border: 1px solid #000000;
+      background: transparent;
+      color: #000000;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: inline-block;
+      text-decoration: none;
+      margin-right: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn-default-sample:hover {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    .btn-default-sample:active {
+      background: #333333;
+      color: #ffffff;
+    }
+
+    /* Form Controls */
+    .form-control-sample {
+      font-size: 14px;
+      font-weight: 700;
+      color: #000000;
+      text-transform: uppercase;
+      border: 1px solid #000000;
+      background: transparent;
+      padding: 6px 12px;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      display: inline-block;
+      min-width: 150px;
+    }
+
+    .form-control-sample::placeholder {
+      color: #000000;
+      opacity: 1;
+    }
+
+    /* Labels */
+    .label-sample {
+      font-size: 14px;
+      font-weight: 400;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    /* Navbar tabs */
+    .navbar-tab-sample {
+      font-size: 14px;
+      font-weight: 700;
+      padding: 6px 12px;
+      border: 1px solid #000000;
+      border-left: none;
+      background: transparent;
+      color: #000000;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .navbar-tab-sample:first-child {
+      border-left: 1px solid #000000;
+    }
+
+    .navbar-tab-sample:hover {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    /* Calendar/Datepicker */
+    .datepicker-header-sample {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 14px;
+    }
+
+    /* Body text (default Bootstrap) */
+    .body-text-sample {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.428571429;
+    }
+
+    /* Property description text */
+    .property-text-sample {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 1.5;
+      padding-right: 15%;
+    }
+
+    /* Grid for side-by-side comparison */
+    .specimen-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+
+    .specimen-card {
+      padding: 20px;
+      border: 1px solid #eee;
+    }
+
+    /* Button states demo */
+    .button-states {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .state-demo {
+      text-align: center;
+    }
+
+    .state-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      color: #999;
+      margin-top: 8px;
+    }
+
+    /* Forced states for demo */
+    .btn-hover-demo {
+      background: #000000 !important;
+      color: #ffffff !important;
+    }
+
+    .btn-active-demo {
+      background: #333333 !important;
+      color: #ffffff !important;
+    }
+
+    /* Color swatches */
+    .color-swatches {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .swatch {
+      width: 80px;
+      text-align: center;
+    }
+
+    .swatch-color {
+      width: 80px;
+      height: 80px;
+      border: 1px solid #ddd;
+      margin-bottom: 8px;
+    }
+
+    .swatch-label {
+      font-size: 11px;
+      font-weight: 700;
+    }
+
+    .swatch-value {
+      font-size: 10px;
+      color: #666;
+      font-family: "SF Mono", Monaco, monospace;
+    }
+
+    /* Form row */
+    .form-row {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      align-items: flex-end;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Tab row */
+    .tab-row {
+      display: flex;
+    }
+
+    /* Scale comparison */
+    .scale-comparison {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .scale-item {
+      display: flex;
+      align-items: baseline;
+      gap: 20px;
+    }
+
+    .scale-size {
+      font-size: 11px;
+      font-family: "SF Mono", Monaco, monospace;
+      color: #999;
+      min-width: 60px;
+    }
+  </style>
+</head>
+<body>
+  <div class="audit-container">
+    <header class="audit-header">
+      <h1>Typography Audit</h1>
+      <p>OwnerRez Reset Brand - All text styles and treatments</p>
+    </header>
+
+    <!-- COLORS -->
+    <section class="section">
+      <h2 class="section-title">Color Palette</h2>
+      <div class="color-swatches">
+        <div class="swatch">
+          <div class="swatch-color" style="background: #000000;"></div>
+          <div class="swatch-label">Primary</div>
+          <div class="swatch-value">#000000</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #333333;"></div>
+          <div class="swatch-label">Active</div>
+          <div class="swatch-value">#333333</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #ffffff;"></div>
+          <div class="swatch-label">Background</div>
+          <div class="swatch-value">#FFFFFF</div>
+        </div>
+        <div class="swatch">
+          <div class="swatch-color" style="background: #e57373;"></div>
+          <div class="swatch-label">Blocked</div>
+          <div class="swatch-value">#E57373</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HEADINGS -->
+    <section class="section">
+      <h2 class="section-title">Headings</h2>
+
+      <div class="specimen">
+        <div class="specimen-label">H1 Page Header</div>
+        <h1 class="h1-page-header">Find Your Reset</h1>
+        <div class="specimen-meta">font-size: 30px | font-weight: 700 | letter-spacing: 0</div>
+      </div>
+
+      <div class="specimen">
+        <div class="specimen-label">H2 Media Heading</div>
+        <h2 class="h2-media-heading">Property Name Goes Here</h2>
+        <div class="specimen-meta">font-size: 30px | font-weight: 700 | letter-spacing: 0</div>
+      </div>
+
+      <div class="specimen">
+        <div class="specimen-label">H2 Media Heading (as link)</div>
+        <a href="#" class="h2-media-heading-link">Property Name as Link</a>
+        <div class="specimen-meta">font-size: 30px | font-weight: 700 | letter-spacing: 0 | color: #000 | text-decoration: none</div>
+      </div>
+    </section>
+
+    <!-- BODY TEXT -->
+    <section class="section">
+      <h2 class="section-title">Body Text</h2>
+
+      <div class="specimen">
+        <div class="specimen-label">Default Body Text (Bootstrap base)</div>
+        <p class="body-text-sample">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+        </p>
+        <div class="specimen-meta">font-size: 14px | font-weight: 400 | line-height: 1.428</div>
+      </div>
+
+      <div class="specimen">
+        <div class="specimen-label">Property Description Text (with padding)</div>
+        <p class="property-text-sample">
+          Welcome to our beautiful mountain retreat. This cabin offers stunning views of the surrounding wilderness and provides all the amenities you need for a comfortable stay. The property features a spacious living area, fully equipped kitchen, and private hot tub.
+        </p>
+        <div class="specimen-meta">font-size: 14px | font-weight: 400 | line-height: 1.5 | padding-right: 15%</div>
+      </div>
+    </section>
+
+    <!-- BUTTONS -->
+    <section class="section">
+      <h2 class="section-title">Buttons</h2>
+
+      <div class="specimen">
+        <div class="specimen-label">Button States</div>
+        <div class="button-states">
+          <div class="state-demo">
+            <button class="btn-default-sample">Find Your Reset</button>
+            <div class="state-label">Default</div>
+          </div>
+          <div class="state-demo">
+            <button class="btn-default-sample btn-hover-demo">Find Your Reset</button>
+            <div class="state-label">Hover</div>
+          </div>
+          <div class="state-demo">
+            <button class="btn-default-sample btn-active-demo">Find Your Reset</button>
+            <div class="state-label">Active</div>
+          </div>
+        </div>
+        <div class="specimen-meta">font-size: 14px | font-weight: 700 | text-transform: uppercase | padding: 6px 12px | border: 1px solid #000</div>
+      </div>
+
+      <div class="specimen">
+        <div class="specimen-label">Button Variations</div>
+        <button class="btn-default-sample">Book Now</button>
+        <button class="btn-default-sample">Send Inquiry</button>
+        <button class="btn-default-sample">View Details</button>
+        <button class="btn-default-sample">Search</button>
+      </div>
+    </section>
+
+    <!-- NAVIGATION TABS -->
+    <section class="section">
+      <h2 class="section-title">Navigation Tabs (Property Page)</h2>
+
+      <div class="specimen">
+        <div class="specimen-label">Navbar Cabin Tabs</div>
+        <div class="tab-row">
+          <a href="#" class="navbar-tab-sample">Description</a>
+          <a href="#" class="navbar-tab-sample">Amenities</a>
+          <a href="#" class="navbar-tab-sample">Reviews</a>
+          <a href="#" class="navbar-tab-sample">Calendar</a>
+          <a href="#" class="navbar-tab-sample">Location</a>
+        </div>
+        <div class="specimen-meta">font-size: 14px | font-weight: 700 | padding: 6px 12px | border: 1px solid #000 | border-left: none (except first)</div>
+      </div>
+    </section>
+
+    <!-- FORM CONTROLS -->
+    <section class="section">
+      <h2 class="section-title">Form Controls</h2>
+
+      <div class="specimen">
+        <div class="specimen-label">Search Bar Inputs</div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="label-sample">Arrival Date</label>
+            <input type="text" class="form-control-sample" placeholder="MM/DD/YYYY">
+          </div>
+          <div class="form-group">
+            <label class="label-sample">Departure Date</label>
+            <input type="text" class="form-control-sample" placeholder="MM/DD/YYYY">
+          </div>
+          <div class="form-group">
+            <label class="label-sample">Bedrooms</label>
+            <select class="form-control-sample">
+              <option>ANY</option>
+              <option>1+</option>
+              <option>2+</option>
+              <option>3+</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="label-sample">Guests</label>
+            <select class="form-control-sample">
+              <option>ANY</option>
+              <option>2+</option>
+              <option>4+</option>
+              <option>6+</option>
+            </select>
+          </div>
+        </div>
+        <div class="specimen-meta">font-size: 14px | font-weight: 700 | text-transform: uppercase | border: 1px solid #000 | color: #000</div>
+      </div>
+
+      <div class="specimen">
+        <div class="specimen-label">Labels</div>
+        <label class="label-sample">Form Label Text</label>
+        <div class="specimen-meta">text-transform: uppercase</div>
+      </div>
+    </section>
+
+    <!-- CALENDAR -->
+    <section class="section">
+      <h2 class="section-title">Calendar / Datepicker</h2>
+
+      <div class="specimen">
+        <div class="specimen-label">Calendar Header</div>
+        <div class="datepicker-header-sample">January 2024</div>
+        <div class="specimen-meta">font-weight: 700 | text-transform: uppercase</div>
+      </div>
+
+      <div class="specimen">
+        <div class="specimen-label">Calendar Date States</div>
+        <div style="display: flex; gap: 10px; margin-top: 15px;">
+          <div style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd;">15</div>
+          <div style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: #000; color: #fff;">16</div>
+          <div style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: #e57373; color: #fff;">17</div>
+        </div>
+        <div style="display: flex; gap: 10px; margin-top: 5px;">
+          <div style="font-size: 10px; width: 50px; text-align: center; color: #999;">Available</div>
+          <div style="font-size: 10px; width: 50px; text-align: center; color: #999;">Selected</div>
+          <div style="font-size: 10px; width: 50px; text-align: center; color: #999;">Blocked</div>
+        </div>
+        <div class="specimen-meta">Day cell: 50px x 50px | line-height: 50px | text-align: center</div>
+      </div>
+    </section>
+
+    <!-- TYPE SCALE -->
+    <section class="section">
+      <h2 class="section-title">Type Scale Summary</h2>
+
+      <div class="scale-comparison">
+        <div class="scale-item">
+          <span class="scale-size">30px</span>
+          <span style="font-size: 30px; font-weight: 700;">Headings (H1, H2)</span>
+        </div>
+        <div class="scale-item">
+          <span class="scale-size">16px</span>
+          <span style="font-size: 16px; font-weight: 400;">Calendar navigation arrows</span>
+        </div>
+        <div class="scale-item">
+          <span class="scale-size">14px</span>
+          <span style="font-size: 14px; font-weight: 700; text-transform: uppercase;">BUTTONS, FORM CONTROLS, LABELS</span>
+        </div>
+        <div class="scale-item">
+          <span class="scale-size">14px</span>
+          <span style="font-size: 14px; font-weight: 400;">Body text, paragraphs</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- DESIGN PRINCIPLES -->
+    <section class="section">
+      <h2 class="section-title">Design Principles Applied</h2>
+
+      <div class="specimen-grid">
+        <div class="specimen-card">
+          <div class="specimen-label">Swiss Design</div>
+          <p class="body-text-sample" style="margin-top: 10px;">
+            No rounded corners (border-radius: 0) applied globally to all elements including buttons, form controls, images, and cards.
+          </p>
+        </div>
+        <div class="specimen-card">
+          <div class="specimen-label">Uppercase Treatment</div>
+          <p class="body-text-sample" style="margin-top: 10px;">
+            Buttons, labels, form placeholders, and calendar headers use uppercase text-transform for a bold, authoritative appearance.
+          </p>
+        </div>
+        <div class="specimen-card">
+          <div class="specimen-label">Heavy Weight</div>
+          <p class="body-text-sample" style="margin-top: 10px;">
+            Font-weight: 700 used consistently for headings, buttons, form controls, and navigation elements.
+          </p>
+        </div>
+        <div class="specimen-card">
+          <div class="specimen-label">Black Borders</div>
+          <p class="body-text-sample" style="margin-top: 10px;">
+            Consistent 1px solid #000000 borders on interactive elements: buttons, form controls, sidebar container.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- NOTES -->
+    <section class="section">
+      <h2 class="section-title">Observations & Notes</h2>
+
+      <div class="specimen">
+        <div class="specimen-label">Font Family</div>
+        <p class="body-text-sample">
+          The site uses the default Bootstrap/system font stack. No custom web fonts are specified in the custom CSS overrides. The underlying OwnerRez platform likely uses a standard sans-serif stack.
+        </p>
+      </div>
+
+      <div class="specimen">
+        <div class="specimen-label">Limited Type Scale</div>
+        <p class="body-text-sample">
+          Only two distinct sizes are defined: 30px for headings and 14px for everything else (body, buttons, forms). This creates a very flat hierarchy with strong contrast between headings and content.
+        </p>
+      </div>
+
+      <div class="specimen">
+        <div class="specimen-label">Responsive Considerations</div>
+        <p class="body-text-sample">
+          Padding-right adjustments for text blocks: 15% on desktop, 10% on tablet, 5% on mobile. No responsive font-size adjustments are specified.
+        </p>
+      </div>
+    </section>
+  </div>
+</body>
+</html>
