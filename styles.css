@@ -241,7 +241,7 @@ h1.page-header {
 }
 
 /* Property page h2 headings - all caps headline treatment */
-.proppage h2 {
+h2.proppage {
   text-transform: uppercase !important;
   font-weight: 700 !important;
   letter-spacing: 0.05em !important;
