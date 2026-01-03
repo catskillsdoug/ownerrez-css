@@ -354,9 +354,14 @@ input#DepartureDate.form-control,
     padding-right: 10% !important;
   }
 
-  .header-logo::after {
+  div.header-logo::after {
     display: none !important;
   }
+}
+
+/* Hide header-logo::after globally */
+div.header-logo::after {
+  display: none !important;
 }
 
 /* ============================================
