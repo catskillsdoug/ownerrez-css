@@ -323,6 +323,16 @@ input#DepartureDate.form-control,
 }
 
 /* ============================================
+   RESPONSIVE - TABLET
+   Search bar button margin fix
+   ============================================ */
+@media (max-width: 768px) {
+  .row.search-bar .btn {
+    margin-top: 0 !important;
+  }
+}
+
+/* ============================================
    RESPONSIVE - MOBILE
    ============================================ */
 @media (max-width: 767px) {
