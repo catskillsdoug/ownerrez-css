@@ -118,7 +118,13 @@ p .btn-group {
   font-weight: 700 !important;
   padding: 6px 12px !important;
   border: 1px solid #000000 !important;
+  border-left: none !important;
   background: transparent !important;
+}
+
+.navbar-cabin li:first-child a,
+.navbar-default.navbar-cabin li:first-child a {
+  border-left: 1px solid #000000 !important;
 }
 
 /* ============================================
