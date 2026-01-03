@@ -276,23 +276,27 @@ input#DepartureDate.form-control,
 }
 
 /* Merge date input and calendar icon into one box */
+.search-bar .input-group.date,
+.input-group.date {
+  border: 1px solid #000000 !important;
+}
+
 .search-bar .input-group.date input.form-control,
 .input-group.date input#ArrivalDate,
 .input-group.date input#DepartureDate {
-  border-right: none !important;
+  border: none !important;
 }
 
 .search-bar .input-group.date .input-group-btn,
 .input-group.date .input-group-btn {
-  margin-left: -20px !important;
+  margin-left: 0 !important;
   margin-top: 0 !important;
 }
 
 .search-bar .input-group.date .input-group-btn a,
 .search-bar .input-group.date .input-group-btn .btn,
 .input-group.date .input-group-btn a.btn.btn-default {
-  border: 1px solid #000000 !important;
-  border-left: none !important;
+  border: none !important;
   background: transparent !important;
   background-color: transparent !important;
 }
