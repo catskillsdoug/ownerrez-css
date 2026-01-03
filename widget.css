@@ -44,3 +44,58 @@ button.btn.btn-default.btn-block:active,
   background-color: #333333 !important;
   color: #ffffff !important;
 }
+
+/* ============================================
+   CALENDAR / DATEPICKER
+   Common selectors to try:
+   - .datepicker
+   - .datepicker-dropdown
+   - .datepicker table
+   - .datepicker td
+   - .datepicker td.day
+   - .datepicker th
+   - .datepicker .datepicker-switch
+   - .datepicker .prev, .datepicker .next
+   - .day.disabled (blocked dates)
+   - .day.active (selected dates)
+   ============================================ */
+
+/* Calendar container */
+.datepicker,
+.datepicker-dropdown {
+  border: 1px solid #000000 !important;
+  border-radius: 0 !important;
+}
+
+/* Calendar header (month/year) */
+.datepicker .datepicker-switch,
+.datepicker th {
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+}
+
+/* Day cells */
+.datepicker td,
+.datepicker td.day {
+  border-radius: 0 !important;
+}
+
+/* Blocked dates (red background in screenshot) */
+.datepicker td.day.disabled,
+.datepicker td.disabled {
+  background-color: #e57373 !important;
+  color: #ffffff !important;
+}
+
+/* Selected dates */
+.datepicker td.day.active,
+.datepicker td.active {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+/* Navigation arrows */
+.datepicker .prev,
+.datepicker .next {
+  font-weight: 700 !important;
+}
