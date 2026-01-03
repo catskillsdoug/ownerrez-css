@@ -117,7 +117,8 @@ h4.hidden-xs {
 /* Base button styles for all buttons */
 .header-line a.btn.btn-default,
 .btn-group .btn.btn-default,
-button.btn.btn-default.btn-block {
+button.btn.btn-default.btn-block,
+.col-md-4 button.btn.btn-default {
   font-size: 14px !important;
   font-weight: 700 !important;
   padding: 6px 12px !important;
@@ -125,12 +126,14 @@ button.btn.btn-default.btn-block {
   background: transparent !important;
   background-color: transparent !important;
   color: #000000 !important;
+  text-transform: uppercase !important;
 }
 
 /* Button hover states - TO BE CUSTOMIZED */
 .header-line a.btn.btn-default:hover,
 .btn-group .btn.btn-default:hover,
 button.btn.btn-default.btn-block:hover,
+.col-md-4 button.btn.btn-default:hover,
 .navbar-cabin a:hover {
   background: #000000 !important;
   background-color: #000000 !important;
@@ -141,6 +144,7 @@ button.btn.btn-default.btn-block:hover,
 .header-line a.btn.btn-default:active,
 .btn-group .btn.btn-default:active,
 button.btn.btn-default.btn-block:active,
+.col-md-4 button.btn.btn-default:active,
 .navbar-cabin a:active {
   background: #333333 !important;
   background-color: #333333 !important;
