@@ -129,6 +129,14 @@ p .btn-group {
 }
 
 /* ============================================
+   PROPERTY PAGE CONTENT COLUMN
+   ============================================ */
+#content .col-md-8 {
+  padding-left: 0 !important;
+  padding-right: 30px !important;
+}
+
+/* ============================================
    TYPOGRAPHY
    ============================================ */
 h1.page-header,
