@@ -49,6 +49,16 @@
       border: 1px solid #ddd;
     }
 
+    .section.warning {
+      border-color: #f5a623;
+      background: #fffbf5;
+    }
+
+    .section.success {
+      border-color: #4caf50;
+      background: #f5fff5;
+    }
+
     .section-title {
       font-size: 12px;
       font-weight: 700;
@@ -58,6 +68,11 @@
       margin-bottom: 30px;
       padding-bottom: 10px;
       border-bottom: 1px solid #eee;
+    }
+
+    .section.warning .section-title {
+      color: #f5a623;
+      border-bottom-color: #f5a623;
     }
 
     .specimen {
@@ -83,6 +98,44 @@
       color: #999;
       margin-top: 8px;
       font-family: "SF Mono", Monaco, "Cascadia Code", monospace;
+    }
+
+    .specimen-meta.defined {
+      color: #4caf50;
+    }
+
+    .specimen-meta.inherited {
+      color: #f5a623;
+    }
+
+    .specimen-meta.missing {
+      color: #e53935;
+    }
+
+    .tag {
+      display: inline-block;
+      font-size: 9px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      padding: 2px 6px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }
+
+    .tag.defined {
+      background: #e8f5e9;
+      color: #4caf50;
+    }
+
+    .tag.inherited {
+      background: #fff3e0;
+      color: #f5a623;
+    }
+
+    .tag.missing {
+      background: #ffebee;
+      color: #e53935;
     }
 
     /* =============================================
@@ -119,8 +172,11 @@
 
     /* Buttons */
     .btn-default-sample {
+      font-family: inherit;
       font-size: 14px;
       font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.5;
       padding: 6px 12px;
       border: 1px solid #000000;
       background: transparent;
@@ -131,6 +187,7 @@
       text-decoration: none;
       margin-right: 10px;
       margin-bottom: 10px;
+      transition: none;
     }
 
     .btn-default-sample:hover {
@@ -143,10 +200,18 @@
       color: #ffffff;
     }
 
+    .btn-default-sample:focus {
+      outline: none;
+      box-shadow: none;
+    }
+
     /* Form Controls */
     .form-control-sample {
+      font-family: inherit;
       font-size: 14px;
       font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.5;
       color: #000000;
       text-transform: uppercase;
       border: 1px solid #000000;
@@ -163,10 +228,17 @@
       opacity: 1;
     }
 
+    .form-control-sample:focus {
+      outline: none;
+      box-shadow: none;
+      border-color: #000;
+    }
+
     /* Labels */
     .label-sample {
       font-size: 14px;
       font-weight: 400;
+      letter-spacing: 0;
       text-transform: uppercase;
       display: block;
       margin-bottom: 5px;
@@ -174,8 +246,11 @@
 
     /* Navbar tabs */
     .navbar-tab-sample {
+      font-family: inherit;
       font-size: 14px;
       font-weight: 700;
+      letter-spacing: 0;
+      line-height: 1.5;
       padding: 6px 12px;
       border: 1px solid #000000;
       border-left: none;
@@ -183,6 +258,7 @@
       color: #000000;
       text-decoration: none;
       display: inline-block;
+      transition: none;
     }
 
     .navbar-tab-sample:first-child {
@@ -192,6 +268,7 @@
     .navbar-tab-sample:hover {
       background: #000000;
       color: #ffffff;
+      text-decoration: none;
     }
 
     /* Calendar/Datepicker */
@@ -199,13 +276,15 @@
       font-weight: 700;
       text-transform: uppercase;
       font-size: 14px;
+      letter-spacing: 0;
     }
 
-    /* Body text (default Bootstrap) */
+    /* Body text */
     .body-text-sample {
       font-size: 14px;
       font-weight: 400;
       line-height: 1.428571429;
+      letter-spacing: 0;
     }
 
     /* Property description text */
@@ -213,7 +292,29 @@
       font-size: 14px;
       font-weight: 400;
       line-height: 1.5;
+      letter-spacing: 0;
       padding-right: 15%;
+    }
+
+    /* Links */
+    .link-sample {
+      color: #337ab7;
+      text-decoration: none;
+    }
+
+    .link-sample:hover {
+      color: #23527c;
+      text-decoration: underline;
+    }
+
+    .link-sample-defined {
+      color: #000;
+      text-decoration: none;
+    }
+
+    .link-sample-defined:hover {
+      color: #000;
+      text-decoration: underline;
     }
 
     /* Grid for side-by-side comparison */
@@ -255,6 +356,11 @@
     .btn-active-demo {
       background: #333333 !important;
       color: #ffffff !important;
+    }
+
+    .btn-focus-demo {
+      outline: 2px solid #000 !important;
+      outline-offset: 2px !important;
     }
 
     /* Color swatches */
@@ -324,83 +430,240 @@
       color: #999;
       min-width: 60px;
     }
+
+    /* Checklist */
+    .checklist {
+      list-style: none;
+      padding: 0;
+    }
+
+    .checklist li {
+      padding: 10px 0;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    .check-icon {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    .check-icon.yes {
+      background: #e8f5e9;
+      color: #4caf50;
+    }
+
+    .check-icon.no {
+      background: #ffebee;
+      color: #e53935;
+    }
+
+    .check-icon.partial {
+      background: #fff3e0;
+      color: #f5a623;
+    }
+
+    /* Comparison table */
+    .comparison-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 13px;
+    }
+
+    .comparison-table th,
+    .comparison-table td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #eee;
+    }
+
+    .comparison-table th {
+      font-weight: 700;
+      text-transform: uppercase;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: #999;
+    }
+
+    .comparison-table code {
+      background: #f5f5f5;
+      padding: 2px 6px;
+      font-size: 11px;
+    }
+
+    /* Side by side */
+    .side-by-side {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+
+    .side-by-side-item {
+      padding: 20px;
+      border: 1px solid #eee;
+    }
+
+    .side-by-side-item h4 {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #999;
+      margin-bottom: 15px;
+    }
   </style>
 </head>
 <body>
   <div class="audit-container">
     <header class="audit-header">
       <h1>Typography Audit</h1>
-      <p>OwnerRez Reset Brand - All text styles and treatments</p>
+      <p>OwnerRez Reset Brand - Defined styles vs Bootstrap/OwnerRez inherited defaults</p>
     </header>
+
+    <!-- CONSISTENCY CHECKLIST -->
+    <section class="section warning">
+      <h2 class="section-title">Consistency Checklist - Items Needing Attention</h2>
+
+      <ul class="checklist">
+        <li>
+          <span class="check-icon partial">!</span>
+          <div>
+            <strong>Letter-spacing</strong> - Only explicitly set to <code>0</code> on headings. Buttons, labels, and body text inherit from Bootstrap (which may vary).
+          </div>
+        </li>
+        <li>
+          <span class="check-icon partial">!</span>
+          <div>
+            <strong>Line-height</strong> - Not explicitly set on buttons or form controls. Bootstrap default is <code>1.428571429</code>, but elements may vary.
+          </div>
+        </li>
+        <li>
+          <span class="check-icon partial">!</span>
+          <div>
+            <strong>Link colors</strong> - Heading links are set to <code>#000</code>, but general links inherit Bootstrap blue (<code>#337ab7</code>).
+          </div>
+        </li>
+        <li>
+          <span class="check-icon partial">!</span>
+          <div>
+            <strong>Focus states</strong> - No explicit focus styles defined. Bootstrap defaults may show blue outlines or box-shadows.
+          </div>
+        </li>
+        <li>
+          <span class="check-icon partial">!</span>
+          <div>
+            <strong>Font family</strong> - Not explicitly set. Inherits from OwnerRez/Bootstrap which may use different stacks in different contexts.
+          </div>
+        </li>
+        <li>
+          <span class="check-icon partial">!</span>
+          <div>
+            <strong>Transition effects</strong> - Not defined. Bootstrap may add transitions on hover/focus that feel inconsistent with Swiss design.
+          </div>
+        </li>
+      </ul>
+    </section>
 
     <!-- COLORS -->
     <section class="section">
       <h2 class="section-title">Color Palette</h2>
-      <div class="color-swatches">
-        <div class="swatch">
-          <div class="swatch-color" style="background: #000000;"></div>
-          <div class="swatch-label">Primary</div>
-          <div class="swatch-value">#000000</div>
+
+      <div class="specimen">
+        <div class="specimen-label">Defined Colors <span class="tag defined">Explicit</span></div>
+        <div class="color-swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #000000;"></div>
+            <div class="swatch-label">Text/Border</div>
+            <div class="swatch-value">#000000</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #333333;"></div>
+            <div class="swatch-label">Active State</div>
+            <div class="swatch-value">#333333</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #ffffff;"></div>
+            <div class="swatch-label">Background</div>
+            <div class="swatch-value">#FFFFFF</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #e57373;"></div>
+            <div class="swatch-label">Blocked Date</div>
+            <div class="swatch-value">#E57373</div>
+          </div>
         </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background: #333333;"></div>
-          <div class="swatch-label">Active</div>
-          <div class="swatch-value">#333333</div>
+      </div>
+
+      <div class="specimen">
+        <div class="specimen-label">Inherited Colors (Bootstrap defaults) <span class="tag inherited">Not Overridden</span></div>
+        <div class="color-swatches">
+          <div class="swatch">
+            <div class="swatch-color" style="background: #337ab7;"></div>
+            <div class="swatch-label">Link Default</div>
+            <div class="swatch-value">#337AB7</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #23527c;"></div>
+            <div class="swatch-label">Link Hover</div>
+            <div class="swatch-value">#23527C</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #66afe9;"></div>
+            <div class="swatch-label">Focus Glow</div>
+            <div class="swatch-value">#66AFE9</div>
+          </div>
+          <div class="swatch">
+            <div class="swatch-color" style="background: #ccc;"></div>
+            <div class="swatch-label">Input Border</div>
+            <div class="swatch-value">#CCCCCC</div>
+          </div>
         </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background: #ffffff;"></div>
-          <div class="swatch-label">Background</div>
-          <div class="swatch-value">#FFFFFF</div>
+      </div>
+    </section>
+
+    <!-- LINKS COMPARISON -->
+    <section class="section warning">
+      <h2 class="section-title">Links - Inconsistent Treatment</h2>
+
+      <div class="side-by-side">
+        <div class="side-by-side-item">
+          <h4>Heading Links (Defined)</h4>
+          <a href="#" class="link-sample-defined" style="font-size: 24px; font-weight: 700;">Property Name Link</a>
+          <div class="specimen-meta defined">color: #000 | hover: underline</div>
         </div>
-        <div class="swatch">
-          <div class="swatch-color" style="background: #e57373;"></div>
-          <div class="swatch-label">Blocked</div>
-          <div class="swatch-value">#E57373</div>
+        <div class="side-by-side-item">
+          <h4>Body Links (Bootstrap Default)</h4>
+          <p style="font-size: 14px;">Check out our <a href="#" class="link-sample">amenities page</a> for more details about the <a href="#" class="link-sample">property features</a>.</p>
+          <div class="specimen-meta inherited">color: #337ab7 | hover: #23527c + underline</div>
         </div>
       </div>
     </section>
 
     <!-- HEADINGS -->
-    <section class="section">
-      <h2 class="section-title">Headings</h2>
+    <section class="section success">
+      <h2 class="section-title">Headings <span class="tag defined">Fully Defined</span></h2>
 
       <div class="specimen">
         <div class="specimen-label">H1 Page Header</div>
         <h1 class="h1-page-header">Find Your Reset</h1>
-        <div class="specimen-meta">font-size: 30px | font-weight: 700 | letter-spacing: 0</div>
+        <div class="specimen-meta defined">font-size: 30px | font-weight: 700 | letter-spacing: 0 | line-height: 1.2</div>
       </div>
 
       <div class="specimen">
         <div class="specimen-label">H2 Media Heading</div>
         <h2 class="h2-media-heading">Property Name Goes Here</h2>
-        <div class="specimen-meta">font-size: 30px | font-weight: 700 | letter-spacing: 0</div>
-      </div>
-
-      <div class="specimen">
-        <div class="specimen-label">H2 Media Heading (as link)</div>
-        <a href="#" class="h2-media-heading-link">Property Name as Link</a>
-        <div class="specimen-meta">font-size: 30px | font-weight: 700 | letter-spacing: 0 | color: #000 | text-decoration: none</div>
-      </div>
-    </section>
-
-    <!-- BODY TEXT -->
-    <section class="section">
-      <h2 class="section-title">Body Text</h2>
-
-      <div class="specimen">
-        <div class="specimen-label">Default Body Text (Bootstrap base)</div>
-        <p class="body-text-sample">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-        </p>
-        <div class="specimen-meta">font-size: 14px | font-weight: 400 | line-height: 1.428</div>
-      </div>
-
-      <div class="specimen">
-        <div class="specimen-label">Property Description Text (with padding)</div>
-        <p class="property-text-sample">
-          Welcome to our beautiful mountain retreat. This cabin offers stunning views of the surrounding wilderness and provides all the amenities you need for a comfortable stay. The property features a spacious living area, fully equipped kitchen, and private hot tub.
-        </p>
-        <div class="specimen-meta">font-size: 14px | font-weight: 400 | line-height: 1.5 | padding-right: 15%</div>
+        <div class="specimen-meta defined">font-size: 30px | font-weight: 700 | letter-spacing: 0 | line-height: 1.2</div>
       </div>
     </section>
 
@@ -409,7 +672,7 @@
       <h2 class="section-title">Buttons</h2>
 
       <div class="specimen">
-        <div class="specimen-label">Button States</div>
+        <div class="specimen-label">Button States <span class="tag defined">Colors Defined</span> <span class="tag inherited">Line-height Inherited</span></div>
         <div class="button-states">
           <div class="state-demo">
             <button class="btn-default-sample">Find Your Reset</button>
@@ -423,34 +686,59 @@
             <button class="btn-default-sample btn-active-demo">Find Your Reset</button>
             <div class="state-label">Active</div>
           </div>
+          <div class="state-demo">
+            <button class="btn-default-sample btn-focus-demo">Find Your Reset</button>
+            <div class="state-label">Focus (needs definition)</div>
+          </div>
         </div>
-        <div class="specimen-meta">font-size: 14px | font-weight: 700 | text-transform: uppercase | padding: 6px 12px | border: 1px solid #000</div>
       </div>
 
-      <div class="specimen">
-        <div class="specimen-label">Button Variations</div>
-        <button class="btn-default-sample">Book Now</button>
-        <button class="btn-default-sample">Send Inquiry</button>
-        <button class="btn-default-sample">View Details</button>
-        <button class="btn-default-sample">Search</button>
-      </div>
-    </section>
-
-    <!-- NAVIGATION TABS -->
-    <section class="section">
-      <h2 class="section-title">Navigation Tabs (Property Page)</h2>
-
-      <div class="specimen">
-        <div class="specimen-label">Navbar Cabin Tabs</div>
-        <div class="tab-row">
-          <a href="#" class="navbar-tab-sample">Description</a>
-          <a href="#" class="navbar-tab-sample">Amenities</a>
-          <a href="#" class="navbar-tab-sample">Reviews</a>
-          <a href="#" class="navbar-tab-sample">Calendar</a>
-          <a href="#" class="navbar-tab-sample">Location</a>
-        </div>
-        <div class="specimen-meta">font-size: 14px | font-weight: 700 | padding: 6px 12px | border: 1px solid #000 | border-left: none (except first)</div>
-      </div>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Current Value</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>font-size</td>
+            <td><code>14px</code></td>
+            <td><span class="tag defined">Defined</span></td>
+          </tr>
+          <tr>
+            <td>font-weight</td>
+            <td><code>700</code></td>
+            <td><span class="tag defined">Defined</span></td>
+          </tr>
+          <tr>
+            <td>text-transform</td>
+            <td><code>uppercase</code></td>
+            <td><span class="tag defined">Defined</span></td>
+          </tr>
+          <tr>
+            <td>letter-spacing</td>
+            <td><code>normal</code> (browser default)</td>
+            <td><span class="tag inherited">Not Set</span></td>
+          </tr>
+          <tr>
+            <td>line-height</td>
+            <td><code>1.428...</code> (Bootstrap)</td>
+            <td><span class="tag inherited">Not Set</span></td>
+          </tr>
+          <tr>
+            <td>transition</td>
+            <td>Bootstrap default or none</td>
+            <td><span class="tag inherited">Not Set</span></td>
+          </tr>
+          <tr>
+            <td>:focus outline</td>
+            <td>Bootstrap blue glow</td>
+            <td><span class="tag missing">Needs Override</span></td>
+          </tr>
+        </tbody>
+      </table>
     </section>
 
     <!-- FORM CONTROLS -->
@@ -465,61 +753,94 @@
             <input type="text" class="form-control-sample" placeholder="MM/DD/YYYY">
           </div>
           <div class="form-group">
-            <label class="label-sample">Departure Date</label>
-            <input type="text" class="form-control-sample" placeholder="MM/DD/YYYY">
-          </div>
-          <div class="form-group">
-            <label class="label-sample">Bedrooms</label>
-            <select class="form-control-sample">
-              <option>ANY</option>
-              <option>1+</option>
-              <option>2+</option>
-              <option>3+</option>
-            </select>
-          </div>
-          <div class="form-group">
             <label class="label-sample">Guests</label>
             <select class="form-control-sample">
               <option>ANY</option>
               <option>2+</option>
-              <option>4+</option>
-              <option>6+</option>
             </select>
           </div>
         </div>
-        <div class="specimen-meta">font-size: 14px | font-weight: 700 | text-transform: uppercase | border: 1px solid #000 | color: #000</div>
       </div>
 
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Property</th>
+            <th>Current Value</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>font-size</td>
+            <td><code>14px</code></td>
+            <td><span class="tag defined">Defined</span></td>
+          </tr>
+          <tr>
+            <td>font-weight</td>
+            <td><code>700</code></td>
+            <td><span class="tag defined">Defined</span></td>
+          </tr>
+          <tr>
+            <td>text-transform</td>
+            <td><code>uppercase</code></td>
+            <td><span class="tag defined">Defined</span></td>
+          </tr>
+          <tr>
+            <td>border-color</td>
+            <td><code>#000</code></td>
+            <td><span class="tag defined">Defined</span></td>
+          </tr>
+          <tr>
+            <td>letter-spacing</td>
+            <td><code>normal</code></td>
+            <td><span class="tag inherited">Not Set</span></td>
+          </tr>
+          <tr>
+            <td>line-height</td>
+            <td><code>1.428...</code></td>
+            <td><span class="tag inherited">Not Set</span></td>
+          </tr>
+          <tr>
+            <td>:focus box-shadow</td>
+            <td>Bootstrap blue glow</td>
+            <td><span class="tag missing">Needs Override</span></td>
+          </tr>
+          <tr>
+            <td>:focus border-color</td>
+            <td><code>#66afe9</code></td>
+            <td><span class="tag missing">Needs Override</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- NAVIGATION TABS -->
+    <section class="section">
+      <h2 class="section-title">Navigation Tabs</h2>
+
       <div class="specimen">
-        <div class="specimen-label">Labels</div>
-        <label class="label-sample">Form Label Text</label>
-        <div class="specimen-meta">text-transform: uppercase</div>
+        <div class="specimen-label">Navbar Cabin Tabs</div>
+        <div class="tab-row">
+          <a href="#" class="navbar-tab-sample">Description</a>
+          <a href="#" class="navbar-tab-sample">Amenities</a>
+          <a href="#" class="navbar-tab-sample">Reviews</a>
+          <a href="#" class="navbar-tab-sample">Calendar</a>
+        </div>
+        <div class="specimen-meta">Hover to test interaction</div>
       </div>
     </section>
 
-    <!-- CALENDAR -->
+    <!-- BODY TEXT -->
     <section class="section">
-      <h2 class="section-title">Calendar / Datepicker</h2>
+      <h2 class="section-title">Body Text</h2>
 
       <div class="specimen">
-        <div class="specimen-label">Calendar Header</div>
-        <div class="datepicker-header-sample">January 2024</div>
-        <div class="specimen-meta">font-weight: 700 | text-transform: uppercase</div>
-      </div>
-
-      <div class="specimen">
-        <div class="specimen-label">Calendar Date States</div>
-        <div style="display: flex; gap: 10px; margin-top: 15px;">
-          <div style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border: 1px solid #ddd;">15</div>
-          <div style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: #000; color: #fff;">16</div>
-          <div style="width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; background: #e57373; color: #fff;">17</div>
-        </div>
-        <div style="display: flex; gap: 10px; margin-top: 5px;">
-          <div style="font-size: 10px; width: 50px; text-align: center; color: #999;">Available</div>
-          <div style="font-size: 10px; width: 50px; text-align: center; color: #999;">Selected</div>
-          <div style="font-size: 10px; width: 50px; text-align: center; color: #999;">Blocked</div>
-        </div>
-        <div class="specimen-meta">Day cell: 50px x 50px | line-height: 50px | text-align: center</div>
+        <div class="specimen-label">Paragraph Text <span class="tag inherited">Mostly Inherited</span></div>
+        <p class="body-text-sample">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+        </p>
+        <div class="specimen-meta inherited">font-size: 14px (Bootstrap) | line-height: 1.428 (Bootstrap) | letter-spacing: normal (inherited)</div>
       </div>
     </section>
 
@@ -533,75 +854,104 @@
           <span style="font-size: 30px; font-weight: 700;">Headings (H1, H2)</span>
         </div>
         <div class="scale-item">
-          <span class="scale-size">16px</span>
-          <span style="font-size: 16px; font-weight: 400;">Calendar navigation arrows</span>
-        </div>
-        <div class="scale-item">
-          <span class="scale-size">14px</span>
+          <span class="scale-size">14px / 700</span>
           <span style="font-size: 14px; font-weight: 700; text-transform: uppercase;">BUTTONS, FORM CONTROLS, LABELS</span>
         </div>
         <div class="scale-item">
-          <span class="scale-size">14px</span>
-          <span style="font-size: 14px; font-weight: 400;">Body text, paragraphs</span>
+          <span class="scale-size">14px / 400</span>
+          <span style="font-size: 14px; font-weight: 400;">Body text, paragraphs, descriptions</span>
         </div>
       </div>
     </section>
 
-    <!-- DESIGN PRINCIPLES -->
+    <!-- RECOMMENDED FIXES -->
     <section class="section">
-      <h2 class="section-title">Design Principles Applied</h2>
+      <h2 class="section-title">Recommended CSS Additions for Consistency</h2>
 
-      <div class="specimen-grid">
-        <div class="specimen-card">
-          <div class="specimen-label">Swiss Design</div>
-          <p class="body-text-sample" style="margin-top: 10px;">
-            No rounded corners (border-radius: 0) applied globally to all elements including buttons, form controls, images, and cards.
-          </p>
-        </div>
-        <div class="specimen-card">
-          <div class="specimen-label">Uppercase Treatment</div>
-          <p class="body-text-sample" style="margin-top: 10px;">
-            Buttons, labels, form placeholders, and calendar headers use uppercase text-transform for a bold, authoritative appearance.
-          </p>
-        </div>
-        <div class="specimen-card">
-          <div class="specimen-label">Heavy Weight</div>
-          <p class="body-text-sample" style="margin-top: 10px;">
-            Font-weight: 700 used consistently for headings, buttons, form controls, and navigation elements.
-          </p>
-        </div>
-        <div class="specimen-card">
-          <div class="specimen-label">Black Borders</div>
-          <p class="body-text-sample" style="margin-top: 10px;">
-            Consistent 1px solid #000000 borders on interactive elements: buttons, form controls, sidebar container.
-          </p>
-        </div>
+      <div class="specimen">
+        <div class="specimen-label">Add these rules to styles.css</div>
+        <pre style="background: #1e1e1e; color: #d4d4d4; padding: 20px; font-size: 12px; line-height: 1.6; overflow-x: auto;"><code>/* ============================================
+   TYPOGRAPHY CONSISTENCY FIXES
+   ============================================ */
+
+/* Global letter-spacing reset */
+body,
+.btn,
+.form-control,
+label {
+  letter-spacing: 0 !important;
+}
+
+/* Global line-height for interactive elements */
+.btn,
+.btn-default,
+.form-control,
+.navbar-cabin a {
+  line-height: 1.5 !important;
+}
+
+/* Override Bootstrap link colors */
+a {
+  color: #000000 !important;
+}
+
+a:hover,
+a:focus {
+  color: #000000 !important;
+  text-decoration: underline !important;
+}
+
+/* Remove Bootstrap focus glow */
+.btn:focus,
+.btn-default:focus,
+.form-control:focus {
+  outline: none !important;
+  box-shadow: none !important;
+  border-color: #000000 !important;
+}
+
+/* Or use a Swiss-style focus indicator */
+.btn:focus,
+.form-control:focus {
+  outline: 2px solid #000000 !important;
+  outline-offset: 2px !important;
+}
+
+/* Remove any transitions for sharp interactions */
+.btn,
+.btn-default,
+.form-control,
+a {
+  transition: none !important;
+}</code></pre>
       </div>
     </section>
 
     <!-- NOTES -->
     <section class="section">
-      <h2 class="section-title">Observations & Notes</h2>
+      <h2 class="section-title">Summary</h2>
 
-      <div class="specimen">
-        <div class="specimen-label">Font Family</div>
-        <p class="body-text-sample">
-          The site uses the default Bootstrap/system font stack. No custom web fonts are specified in the custom CSS overrides. The underlying OwnerRez platform likely uses a standard sans-serif stack.
-        </p>
-      </div>
-
-      <div class="specimen">
-        <div class="specimen-label">Limited Type Scale</div>
-        <p class="body-text-sample">
-          Only two distinct sizes are defined: 30px for headings and 14px for everything else (body, buttons, forms). This creates a very flat hierarchy with strong contrast between headings and content.
-        </p>
-      </div>
-
-      <div class="specimen">
-        <div class="specimen-label">Responsive Considerations</div>
-        <p class="body-text-sample">
-          Padding-right adjustments for text blocks: 15% on desktop, 10% on tablet, 5% on mobile. No responsive font-size adjustments are specified.
-        </p>
+      <div class="specimen-grid">
+        <div class="specimen-card">
+          <div class="specimen-label">What's Working</div>
+          <ul style="font-size: 14px; margin-top: 10px; padding-left: 20px;">
+            <li>Heading sizes and weights</li>
+            <li>Button colors and states</li>
+            <li>Form border colors</li>
+            <li>Uppercase text-transform</li>
+            <li>Zero border-radius (Swiss design)</li>
+          </ul>
+        </div>
+        <div class="specimen-card">
+          <div class="specimen-label">Needs Attention</div>
+          <ul style="font-size: 14px; margin-top: 10px; padding-left: 20px;">
+            <li>Letter-spacing consistency</li>
+            <li>Line-height consistency</li>
+            <li>Link color overrides</li>
+            <li>Focus state styling</li>
+            <li>Transition removal</li>
+          </ul>
+        </div>
       </div>
     </section>
   </div>
