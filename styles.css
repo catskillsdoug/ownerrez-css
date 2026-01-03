@@ -118,11 +118,13 @@ h4.hidden-xs {
 .header-line a.btn.btn-default,
 .btn-group .btn.btn-default,
 button.btn.btn-default.btn-block,
-.col-md-4 button.btn.btn-default {
+.col-md-4 button.btn.btn-default,
+.btn-default {
   font-size: 14px !important;
   font-weight: 700 !important;
   padding: 6px 12px !important;
   border: 1px solid #000000 !important;
+  border-color: #000000 !important;
   background: transparent !important;
   background-color: transparent !important;
   color: #000000 !important;
