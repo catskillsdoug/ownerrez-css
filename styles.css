@@ -119,6 +119,10 @@ h2.media-heading a {
   font-size: 30px !important;
 }
 
+h1.page-header {
+  margin-left: -15px !important;
+}
+
 /* ============================================
    SEARCH BAR
    ============================================ */
