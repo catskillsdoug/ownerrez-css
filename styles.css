@@ -111,6 +111,10 @@ p .btn-group {
 /* ============================================
    TYPOGRAPHY
    ============================================ */
+h1.page-header {
+  font-weight: 700 !important;
+}
+
 h2.media-heading,
 h2.media-heading a {
   font-weight: 700 !important;
