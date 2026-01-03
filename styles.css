@@ -49,6 +49,8 @@
   box-shadow: none !important;
 }
 
+
+
 /* ============================================
    HIDE ELEMENTS
    ============================================ */
@@ -82,35 +84,9 @@ span.h4.hidden-xs {
   object-fit: cover !important;
 }
 
-/* ============================================
-   MULTIPROPERTY GRID (Property Page Gallery)
-   ============================================ */
-.multiproperty-grid {
-  display: grid !important;
-  grid-template-columns: repeat(5, 1fr) !important;
-  gap: 10px !important;
-}
-
-.multiproperty-grid figure,
-.multiproperty-grid > figure,
-div.multiproperty-grid figure {
-  aspect-ratio: 1 / 1 !important;
-  overflow: hidden !important;
-  margin: 0 !important;
-  padding: 0 !important;
-  display: block !important;
-  width: 100% !important;
-  height: auto !important;
-}
-
-.multiproperty-grid figure img,
-.multiproperty-grid > figure img,
-.multiproperty-grid > figure > img,
-div.multiproperty-grid figure img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  display: block !important;
+/* Property page image grid - make images appear square like original */
+#content .multiproperty-grid-wrapper figure img {
+    height: 170%;
 }
 
 /* ============================================
