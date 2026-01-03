@@ -84,10 +84,12 @@ span.h4.hidden-xs {
 
 /* ============================================
    MULTIPROPERTY GRID (Property Page Gallery)
+   All 5 images as equal squares in a row
    ============================================ */
 .multiproperty-grid {
   display: grid !important;
   grid-template-columns: repeat(5, 1fr) !important;
+  grid-template-rows: 1fr !important;
   gap: 10px !important;
 }
 
@@ -101,6 +103,9 @@ div.multiproperty-grid figure {
   display: block !important;
   width: 100% !important;
   height: auto !important;
+  /* Reset any grid spanning */
+  grid-column: span 1 !important;
+  grid-row: span 1 !important;
 }
 
 .multiproperty-grid figure img,
