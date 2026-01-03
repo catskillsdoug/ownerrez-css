@@ -147,6 +147,11 @@ p .btn-group {
 /* ============================================
    PROPERTY PAGE CONTENT COLUMN
    ============================================ */
+#content {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
 #content .col-md-8 {
   padding-left: 0 !important;
   padding-right: 30px !important;
