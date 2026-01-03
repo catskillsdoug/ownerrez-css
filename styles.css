@@ -157,6 +157,12 @@ p .btn-group {
   padding-right: 30px !important;
 }
 
+#content .col-md-4.pull-right-md {
+  border: 1px solid #000000 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
 /* ============================================
    TYPOGRAPHY
    ============================================ */
