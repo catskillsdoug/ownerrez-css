@@ -240,6 +240,13 @@ h1.page-header {
   margin-left: -15px !important;
 }
 
+/* Property page h2 headings - all caps headline treatment */
+.proppage h2 {
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.05em !important;
+}
+
 /* ============================================
    SEARCH BAR
    ============================================ */
