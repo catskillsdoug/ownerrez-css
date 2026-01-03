@@ -353,6 +353,10 @@ input#DepartureDate.form-control,
   .media-body {
     padding-right: 10% !important;
   }
+
+  .header-logo::after {
+    display: none !important;
+  }
 }
 
 /* ============================================
