@@ -134,11 +134,14 @@ button.btn.btn-default.btn-block,
 }
 
 /* Force border color override for widget styles */
+.form-control,
+.input-group-addon,
+.btn-default,
 .form-control.btn-default,
 .input-group-addon.btn-default,
 button.btn-default,
 .btn.btn-default {
-  border-color: #000000 !important;
+  border-color: #000 !important;
 }
 
 /* Button hover states - TO BE CUSTOMIZED */
