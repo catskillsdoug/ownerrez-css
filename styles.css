@@ -244,7 +244,7 @@ h1.page-header {
 h2.proppage {
   text-transform: uppercase !important;
   font-weight: 700 !important;
-  letter-spacing: 0.05em !important;
+  letter-spacing: normal !important;
 }
 
 /* ============================================
