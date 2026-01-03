@@ -1,6 +1,11 @@
 /* OwnerRez Widget CSS Overrides */
 /* Import via: @import url("https://reset-club-css.netlify.app/widget.css"); */
 
+/* Labels - uppercase */
+label {
+  text-transform: uppercase !important;
+}
+
 /* Button border color override */
 .form-control,
 .input-group-addon,
