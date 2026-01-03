@@ -26,6 +26,7 @@
 .navbar-brand.has-brand-image {
   height: 30px !important;
   margin: 10px !important;
+  margin-left: 0 !important;
 }
 
 /* ============================================
