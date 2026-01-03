@@ -120,6 +120,7 @@ p .btn-group {
   border: 1px solid #000000 !important;
   border-left: none !important;
   background: transparent !important;
+  color: #000000 !important;
 }
 
 .navbar-cabin li:first-child a,
