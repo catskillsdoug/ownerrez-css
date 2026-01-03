@@ -83,6 +83,27 @@ span.h4.hidden-xs {
 }
 
 /* ============================================
+   MULTIPROPERTY GRID (Property Page Gallery)
+   ============================================ */
+.multiproperty-grid {
+  display: grid !important;
+  grid-template-columns: repeat(5, 1fr) !important;
+  gap: 10px !important;
+}
+
+.multiproperty-grid figure {
+  aspect-ratio: 1 / 1 !important;
+  overflow: hidden !important;
+  margin: 0 !important;
+}
+
+.multiproperty-grid figure img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* ============================================
    DATEPICKER
    ============================================ */
 .datepicker {
