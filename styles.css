@@ -161,6 +161,8 @@ p .btn-group {
   border: 1px solid #000000 !important;
   background: #ffffff !important;
   background-color: #ffffff !important;
+  padding-top: 15px !important;
+  padding-bottom: 15px !important;
 }
 
 /* ============================================
