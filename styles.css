@@ -284,8 +284,10 @@ input#DepartureDate.form-control,
 
 .search-bar .input-group.date .input-group-btn,
 .input-group.date .input-group-btn {
-  margin-left: -5px !important;
+  margin-left: -1px !important;
   margin-top: 0 !important;
+  position: relative !important;
+  left: -4px !important;
 }
 
 .search-bar .input-group.date .input-group-btn a,
