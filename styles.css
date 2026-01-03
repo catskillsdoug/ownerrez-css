@@ -221,6 +221,7 @@ h2.media-heading,
 h2.media-heading a {
   font-weight: 700 !important;
   font-size: 30px !important;
+  letter-spacing: 0 !important;
 }
 
 h1.page-header {
