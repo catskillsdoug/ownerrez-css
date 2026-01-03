@@ -102,8 +102,10 @@ button.btn.btn-default.btn-block:active,
 }
 
 .datepicker .prev::after {
-  content: "←" !important;
+  content: "→" !important;
   font-size: 16px !important;
+  transform: rotate(180deg) !important;
+  display: inline-block !important;
 }
 
 .datepicker .next::after {
