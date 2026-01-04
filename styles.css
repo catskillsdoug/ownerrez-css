@@ -423,5 +423,11 @@ div.header-logo::after {
     right: 0 !important;
     bottom: 0 !important;
   }
+
+  /* Carousel background black on mobile */
+  #carousel-hero,
+  .or-carousel {
+    background-color: #000000 !important;
+  }
 }
 
