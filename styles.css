@@ -429,6 +429,14 @@ div.header-logo::after {
   .or-carousel {
     background-color: #000000 !important;
   }
+
+  /* Footer mobile styles */
+  .resetfooter {
+    padding: 40px 20px 30px 20px;
+    width: 100vw;
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
 /* ============================================
@@ -441,6 +449,11 @@ div.header-logo::after {
   color: #fcf6e9;
   padding: 60px 40px 40px 40px;
   margin-top: 60px;
+  /* Full width breakout */
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .resetfooter-content {
@@ -562,10 +575,13 @@ div.header-logo::after {
 .resetfooter-press svg {
   height: 28px;
   width: auto;
+  display: block;
 }
 
-.resetfooter-press svg path {
-  fill: #fcf6e9;
+.resetfooter-press svg,
+.resetfooter-press svg path,
+.resetfooter-press svg g {
+  fill: #fcf6e9 !important;
 }
 
 .resetfooter-copyright {
