@@ -485,18 +485,27 @@ div.header-logo::after {
   }
 
   /* Why Book mobile */
+  .why-book {
+    padding: 40px 0;
+  }
+
   .why-book-row {
     flex-direction: column;
-    gap: 30px;
+    gap: 40px;
   }
 
   .why-book-left,
   .why-book-right {
     max-width: 100%;
+    width: 100%;
   }
 
   .why-book-description {
-    font-size: 20px;
+    font-size: 18px;
+  }
+
+  .why-book-list {
+    width: 100%;
   }
 }
 
@@ -723,9 +732,9 @@ div.header-logo::after {
 .why-book-heading {
   font-size: 30px;
   font-weight: 700;
-  font-style: italic;
   text-transform: uppercase;
   margin-bottom: 30px;
+  font-style: normal;
 }
 
 .why-book-row {
@@ -746,8 +755,8 @@ div.header-logo::after {
 
 .why-book-description {
   font-size: 24px;
-  font-weight: 700;
-  font-style: italic;
+  font-weight: 400;
+  font-style: normal;
   line-height: 1.3;
   margin: 0 0 20px 0;
 }
@@ -760,9 +769,10 @@ div.header-logo::after {
 
 .why-book-list li {
   font-size: 14px;
-  font-weight: 400;
+  font-weight: 700;
+  text-transform: uppercase;
   line-height: 1.5;
-  padding: 8px 0;
+  padding: 12px 0;
   border-bottom: 1px solid #000;
 }
 
