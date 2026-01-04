@@ -436,6 +436,16 @@ div.header-logo::after {
     padding-right: 20px;
   }
 
+  .resetfooter-row {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .resetfooter-left,
+  .resetfooter-right {
+    max-width: 100%;
+  }
+
   .resetfooter-press {
     padding: 30px 20px;
     gap: 20px;
@@ -476,6 +486,22 @@ div.header-logo::after {
   padding-right: 40px;
 }
 
+.resetfooter-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+.resetfooter-left {
+  flex: 1;
+  max-width: 400px;
+}
+
+.resetfooter-right {
+  flex: 1;
+  max-width: 500px;
+}
+
 .resetfooter-brand {
   margin-bottom: 40px;
 }
@@ -505,7 +531,7 @@ div.header-logo::after {
 }
 
 .resetfooter-properties {
-  margin-bottom: 40px;
+  margin-bottom: 0;
   border-top: 1px solid #fcf6e9;
 }
 
