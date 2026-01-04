@@ -216,6 +216,11 @@ p .btn-group {
   max-width: 600px !important;
 }
 
+#content .col-md-8 .navbar {
+  max-width: none !important;
+  width: 100% !important;
+}
+
 #content .col-md-4.pull-right-md {
   border: 1px solid #000000 !important;
   background: #ffffff !important;
