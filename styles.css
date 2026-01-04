@@ -438,7 +438,7 @@ div.header-logo::after {
 
   .resetfooter-row {
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
   }
 
   .resetfooter-left,
@@ -490,6 +490,7 @@ div.header-logo::after {
   display: flex;
   justify-content: space-between;
   gap: 60px;
+  align-items: flex-start;
 }
 
 .resetfooter-left {
@@ -500,6 +501,14 @@ div.header-logo::after {
 .resetfooter-right {
   flex: 1;
   max-width: 500px;
+}
+
+.resetfooter-logo-row {
+  margin-bottom: 30px;
+}
+
+.resetfooter-bottom {
+  margin-top: 50px;
 }
 
 .resetfooter-brand {
@@ -531,7 +540,7 @@ div.header-logo::after {
 }
 
 .resetfooter-properties {
-  margin-bottom: 0;
+  margin: 0;
   border-top: 1px solid #fcf6e9;
 }
 
