@@ -477,6 +477,21 @@ div.header-logo::after {
   .resetfooter-logo {
     width: 100px;
   }
+
+  /* Why Book mobile */
+  .why-book-row {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .why-book-left,
+  .why-book-right {
+    max-width: 100%;
+  }
+
+  .why-book-description {
+    font-size: 20px;
+  }
 }
 
 /* ============================================
@@ -690,5 +705,62 @@ div.header-logo::after {
 
 .resetfooter-copyright a:hover {
   text-decoration: underline;
+}
+
+/* ============================================
+   WHY BOOK WITH US Section
+   ============================================ */
+.why-book {
+  padding: 60px 0;
+}
+
+.why-book-heading {
+  font-size: 30px;
+  font-weight: 700;
+  font-style: italic;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.why-book-row {
+  display: flex;
+  gap: 60px;
+  align-items: flex-start;
+}
+
+.why-book-left {
+  flex: 1;
+  max-width: 500px;
+}
+
+.why-book-right {
+  flex: 1;
+  max-width: 400px;
+}
+
+.why-book-description {
+  font-size: 24px;
+  font-weight: 700;
+  font-style: italic;
+  line-height: 1.3;
+  margin: 0 0 20px 0;
+}
+
+.why-book-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.why-book-list li {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 8px 0;
+  border-bottom: 1px solid #000;
+}
+
+.why-book-list li:first-child {
+  border-top: 1px solid #000;
 }
 
