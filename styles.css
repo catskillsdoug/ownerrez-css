@@ -216,9 +216,23 @@ p .btn-group {
   max-width: 600px !important;
 }
 
-#content .col-md-8 .navbar {
+#content .col-md-8 .navbar-cabin,
+#content .col-md-8 .navbar,
+.col-md-8 .navbar-cabin,
+.col-md-8 .nav.navbar-nav {
   max-width: none !important;
-  width: 100% !important;
+  width: auto !important;
+}
+
+.navbar-cabin .nav.navbar-nav {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  width: auto !important;
+  max-width: none !important;
+}
+
+.navbar-cabin .nav.navbar-nav > li {
+  flex-shrink: 0 !important;
 }
 
 #content .col-md-4.pull-right-md {
