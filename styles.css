@@ -266,7 +266,15 @@ h2.media-heading a {
 }
 
 h1.page-header {
-  margin-left: -15px !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+}
+
+h2.page-header {
+  text-transform: uppercase !important;
+  font-weight: 700 !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
 }
 
 /* Property page h2 headings - all caps headline treatment */
