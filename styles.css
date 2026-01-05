@@ -386,6 +386,17 @@ input#DepartureDate.form-control,
   padding-right: 15% !important;
 }
 
+/* Amenities table styling */
+.amenities-table tr {
+  border-bottom: 1px solid #000000;
+}
+
+.amenities-table th {
+  text-transform: uppercase;
+  text-align: left !important;
+  font-weight: 700;
+}
+
 /* ============================================
    RESPONSIVE - TABLET
    ============================================ */
