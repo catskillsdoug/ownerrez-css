@@ -216,7 +216,6 @@ p .btn-group {
 }
 
 #content .col-md-8 > .navbar-cabin {
-  width: 100vw !important;
   max-width: none !important;
   margin-left: 0 !important;
   position: relative !important;
