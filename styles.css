@@ -387,14 +387,17 @@ input#DepartureDate.form-control,
 }
 
 /* Amenities table styling */
-.amenities-table tr {
-  border-bottom: 1px solid #000000;
+.amenities-detail tr,
+#amenities-detail tr {
+  border-bottom: 1px solid #000000 !important;
 }
 
-.amenities-table th {
-  text-transform: uppercase;
+.amenities-detail th,
+#amenities-detail th {
+  text-transform: uppercase !important;
   text-align: left !important;
-  font-weight: 700;
+  font-weight: 700 !important;
+  padding-left: 0 !important;
 }
 
 /* ============================================
