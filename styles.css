@@ -277,6 +277,10 @@ h2.page-header {
   padding-left: 0 !important;
 }
 
+.col-md-12 {
+  padding-left: 0 !important;
+}
+
 /* Property page h2 headings - all caps headline treatment */
 h2.proppage {
   text-transform: uppercase !important;
