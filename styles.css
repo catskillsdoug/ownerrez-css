@@ -20,6 +20,11 @@
   box-sizing: border-box;
 }
 
+/* Prevent horizontal scroll from 100vw elements */
+html, body {
+  overflow-x: hidden;
+}
+
 /* ============================================
    HEADER / LOGO
    ============================================ */
