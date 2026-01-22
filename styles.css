@@ -2,6 +2,26 @@
 /* Swiss Design System - Managed by Claude Code */
 
 /* ============================================
+   DESIGN TOKENS (from reset-design-system)
+
+   Colors:
+   - Cream/Background: #fcf6e9
+   - Black/Ink: #000000
+   - White/Surface: #ffffff
+   - Accent Green: #019740
+   - Muted Gold: #9c8336
+
+   Typography:
+   - Primary: Inter, -apple-system, system-ui
+   - Mono: JetBrains Mono, SF Mono
+   - Weight: 400 (regular), 700 (bold)
+
+   Borders:
+   - Width: 1px
+   - Radius: 0 (Swiss design)
+   ============================================ */
+
+/* ============================================
    STEP 1: GLOBAL RESETS
    Swiss design: no rounded corners, consistent box model
    ============================================ */
