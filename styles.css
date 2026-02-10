@@ -542,8 +542,12 @@ div.header-logo::after {
   }
 
   .why-book-row {
-    flex-direction: column;
-    gap: 40px;
+    flex-direction: column !important;
+    gap: 40px !important;
+  }
+
+  .why-book-compare {
+    grid-template-columns: 1fr !important;
   }
 
   .why-book-left,
@@ -836,6 +840,63 @@ div.header-logo::after {
 
 .why-book-list li:first-child {
   border-top: 1px solid #000;
+}
+
+/* Why Book Direct - Value Proposition Enhancements */
+.why-book-badge {
+  display: inline-flex !important;
+  background: #019740 !important;
+  background-color: #019740 !important;
+  color: #fcf6e9 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  padding: 4px 12px !important;
+  margin-bottom: 16px !important;
+  border: none !important;
+}
+
+.why-book-savings {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  margin-bottom: 8px !important;
+  color: #000000 !important;
+}
+
+.why-book-compare {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 16px !important;
+  margin-top: 24px !important;
+}
+
+.why-book-compare-item {
+  padding: 16px !important;
+  border: 1px solid #000 !important;
+  background: #ffffff !important;
+  background-color: #ffffff !important;
+}
+
+.why-book-compare-label {
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  opacity: 0.5 !important;
+  color: #000000 !important;
+  margin-bottom: 4px !important;
+}
+
+.why-book-compare-price {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  margin-top: 4px !important;
+  color: #000000 !important;
+}
+
+.why-book-compare-price.direct {
+  color: #019740 !important;
 }
 
 /* ============================================
