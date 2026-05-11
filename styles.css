@@ -12,9 +12,10 @@
    - Muted Gold: #9c8336
 
    Typography:
-   - Primary: Inter, -apple-system, system-ui
+   - Primary: Inter, system-ui, sans-serif
    - Mono: JetBrains Mono, SF Mono
-   - Weight: 400 (regular), 700 (bold)
+   - Base size: 18px (matches reset.club/n)
+   - Weight: 500 (body), 700 (bold)
 
    Borders:
    - Width: 1px
@@ -46,32 +47,157 @@ html, body {
 }
 
 /* ============================================
-   HEADER / LOGO
+   GLOBAL TYPOGRAPHY — match reset.club/n
+   Body: Inter 18px/1.5, weight 500
    ============================================ */
-.header-container .container {
-  padding-left: 0 !important;
+body {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: #000000 !important;
 }
 
-.navbar-brand.has-brand-image {
-  height: 30px !important;
-  margin: 10px !important;
+p {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+/* Lead/intro text — slightly larger, same weight */
+.lead,
+.media-body > p:first-child {
+  font-size: 21px !important;
+  font-weight: 500 !important;
+  line-height: 1.4 !important;
+}
+
+/* Description blurb on property pages */
+.description,
+.property-description,
+#content .col-md-8 > p {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+/* Amenity/feature list text */
+li,
+.amenity-summary-amenities,
+.amenity-summary-amenities span {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+/* ============================================
+   HEADER / LOGO — match reset.club/n
+   Nav: 16px top/bottom, 24px left/right
+   Logo: 18px equivalent height, tight to left
+   ============================================ */
+.header-container {
+  padding: 0 !important;
+}
+
+/* Header uses same .container rule — no extra padding overrides needed */
+
+/* Override Bootstrap container max-width — match /n full-width layout */
+/* Responsive padding: 16px mobile, 24px tablet, 48px desktop */
+.container,
+#content.container {
+  max-width: 100% !important;
+  width: 100% !important;
+  padding-left: 16px !important;
+  padding-right: 16px !important;
+}
+
+/* Bootstrap grid fix: neutralize Bootstrap's default row/column offset system.
+   Zero out row margins AND column padding so container padding is the only spacing. */
+.row {
   margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+/* Zero column padding — container handles all edge spacing.
+   .container prefix beats OwnerRez's .container .col-md-12 { padding: 0 16px } */
+.container div.col-xs-12,
+.container div.col-12,
+.container div.col-sm-4,
+.container div.col-sm-8,
+.container div.col-md-4,
+.container div.col-md-8,
+.container div.col-md-12,
+.body-content div.col-md-12 {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
 }
 
-.header-line .col-md-12 {
-  background: transparent !important;
-  background-color: transparent !important;
+@media (min-width: 768px) {
+  .container,
+  #content.container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 24px !important;
+    padding-right: 24px !important;
+  }
+}
+
+@media (min-width: 992px) {
+  .container,
+  #content.container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container,
+  #content.container {
+    max-width: 100% !important;
+    width: 100% !important;
+    padding-left: 48px !important;
+    padding-right: 48px !important;
+  }
+}
+
+/* OwnerRez native header — HIDDEN
+   Replaced by injected .reset-nav via reset-club-proxy.
+   This ensures pixel-identical nav across /n and /stay. */
+.header-line,
+.header-line-container,
+#header-bar {
+  display: none !important;
 }
 
 /* ============================================
    HERO CAROUSEL
    ============================================ */
+/* Hero carousel — full-bleed by negating container padding at each breakpoint */
 .carousel.slide.carousel-fade.or-carousel.hero-carousel,
 .or-carousel.hero-carousel,
 .hero-carousel {
   border: none !important;
   margin-bottom: 0 !important;
   box-shadow: none !important;
+  margin-left: -16px !important;
+  margin-right: -16px !important;
+}
+@media (min-width: 768px) {
+  .carousel.slide.carousel-fade.or-carousel.hero-carousel,
+  .or-carousel.hero-carousel,
+  .hero-carousel {
+    margin-left: -24px !important;
+    margin-right: -24px !important;
+  }
+}
+@media (min-width: 992px) {
+  .carousel.slide.carousel-fade.or-carousel.hero-carousel,
+  .or-carousel.hero-carousel,
+  .hero-carousel {
+    margin-left: -48px !important;
+    margin-right: -48px !important;
+  }
 }
 
 
@@ -107,11 +233,82 @@ span.h4.hidden-xs {
   width: 100% !important;
   height: 100% !important;
   object-fit: cover !important;
+  object-position: center center !important;
 }
 
-/* Property page image grid - make images appear square like original */
+/* ============================================
+   HOMEPAGE PROPERTY CARDS — 50/50 image/text on desktop
+   ============================================ */
+@media (min-width: 680px) {
+  .property-result-list .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+
+  .property-result-list .col-sm-4 {
+    width: 50% !important;
+    float: left !important;
+  }
+
+  .property-result-list .col-sm-8 {
+    width: 50% !important;
+    float: left !important;
+  }
+}
+
+/* Photo gallery modal title */
+h4.modal-title {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 35px !important;
+  font-weight: 700 !important;
+  text-decoration: underline !important;
+  color: #000000 !important;
+}
+
+/* Photo gallery tabs and room labels */
+#tab-Photo-Gallery .nav-tabs a,
+.photos-modal .nav-tabs a,
+.modal .nav-tabs a {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+}
+
+/* Photo Gallery heading — more vertical space below */
+h2#photos,
+.linktarget + h2,
+h2[id="photos"] {
+  margin-bottom: 24px !important;
+}
+
+/* Property page photo grid — gaps + consistent typography */
+.multiproperty-grid {
+  gap: 6px !important;
+}
+
+.multiproperty-grid figure {
+  margin: 0 !important;
+  overflow: hidden !important;
+  aspect-ratio: 1 / 1 !important;
+}
+
 #content .multiproperty-grid-wrapper figure img {
-    height: 170%;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+}
+
+/* Photo count badge — match body type */
+.multiproperty-grid-wrapper .photo-count,
+.multiproperty-grid-wrapper [class*="count"],
+.or-carousel .photo-count,
+.or-carousel [class*="count"] {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
 }
 
 /* ============================================
@@ -158,15 +355,18 @@ button.btn.btn-default.btn-block,
 .btn-default,
 #content .col-md-4 .btn-default,
 .pull-right-md .btn-default {
-  font-size: 14px !important;
+  font-size: 18px !important;
   font-weight: 700 !important;
-  padding: 6px 12px !important;
-  border: 1px solid #000000 !important;
+  padding: 0 12px !important;
+  border: 3px solid #000000 !important;
   border-color: #000000 !important;
   background: transparent !important;
   background-color: transparent !important;
   color: #000000 !important;
   text-transform: uppercase !important;
+  height: 44px !important;
+  line-height: 38px !important;
+  letter-spacing: 0.02em !important;
 }
 
 /* Force border color override for widget styles */
@@ -202,29 +402,124 @@ button.btn.btn-default.btn-block:active,
   color: #ffffff !important;
 }
 
-p.btn-group,
-p .btn-group {
-  margin-top: 25px !important;
-  display: block !important;
+/* ============================================
+   HOMEPAGE PROPERTY CARD LINKS — link-row style
+   Matches reset.club/n: full-width rows, arrow right, bottom border
+   ============================================ */
+p.btn-group:empty {
+  display: none !important;
+}
+
+p.btn-group {
+  margin-top: 16px !important;
+  display: flex !important;
+  flex-direction: column !important;
+}
+
+p.btn-group .btn.btn-default:first-child {
+  border-top: 3px solid #000000 !important;
+}
+
+p.btn-group .btn.btn-default {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100% !important;
+  border: none !important;
+  border-bottom: 3px solid #000000 !important;
+  padding: 14px 0 !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  text-transform: uppercase !important;
+  text-align: left !important;
+  background: transparent !important;
+  color: #000000 !important;
+  text-decoration: none !important;
+}
+
+p.btn-group .btn.btn-default:hover {
+  background: transparent !important;
+  color: #000000 !important;
+  opacity: 0.6 !important;
+}
+
+p.btn-group .btn.btn-default:active {
+  background: transparent !important;
+  color: #000000 !important;
+  opacity: 0.4 !important;
+}
+
+/* Arrow after each link-row */
+p.btn-group .btn.btn-default::after {
+  content: '\2192' !important;
+  font-size: 20px !important;
+  font-weight: 400 !important;
+}
+
+/* Hide FontAwesome icons in link-rows */
+p.btn-group .btn.btn-default i {
+  display: none !important;
 }
 
 /* ============================================
-   PROPERTY PAGE NAVBAR TABS
+   PROPERTY PAGE NAVBAR TABS — pill toggle style
+   Matches reset.club/n: individual pills, wrap gracefully
    ============================================ */
-.navbar-cabin a,
-.navbar-default.navbar-cabin a {
-  font-size: 14px !important;
-  font-weight: 700 !important;
-  padding: 6px 12px !important;
-  border: 1px solid #000000 !important;
-  border-left: none !important;
+.navbar-cabin,
+.navbar-default.navbar-cabin {
+  display: block !important;
+  visibility: visible !important;
+  border: none !important;
   background: transparent !important;
-  color: #000000 !important;
+  min-height: 0 !important;
+  margin-bottom: 16px !important;
+  box-shadow: none !important;
 }
 
-.navbar-cabin li:first-child a,
-.navbar-default.navbar-cabin li:first-child a {
-  border-left: 1px solid #000000 !important;
+.navbar-cabin .nav.navbar-nav {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.navbar-cabin .nav.navbar-nav > li {
+  float: none !important;
+  margin: 0 !important;
+}
+
+.navbar-cabin a,
+.navbar-default.navbar-cabin a {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  padding: 8px 20px !important;
+  border: 3px solid #000000 !important;
+  border-radius: 999px !important;
+  background: transparent !important;
+  color: #000000 !important;
+  opacity: 1 !important;
+  text-transform: uppercase !important;
+  display: inline-block !important;
+  line-height: 1.4 !important;
+  text-decoration: none !important;
+}
+
+.navbar-cabin a:hover,
+.navbar-default.navbar-cabin a:hover {
+  background: #000000 !important;
+  color: #fcf6e9 !important;
+}
+
+.navbar-cabin a:active,
+.navbar-default.navbar-cabin a:active {
+  background: #333333 !important;
+  color: #fcf6e9 !important;
+}
+
+/* Align first pill visually with content edge — rounded border creates optical indent */
+.navbar-cabin .nav.navbar-nav > li:first-child {
+  margin-left: -8px !important;
 }
 
 /* ============================================
@@ -235,9 +530,61 @@ p .btn-group {
   background-color: transparent !important;
 }
 
-#content .col-md-8 {
-  padding-left: 0 !important;
-  padding-right: 30px !important;
+/* Listing page — image left (col-sm-4) + text right (col-sm-8) gap.
+   Specificity must beat .container div.col-sm-* (0,2,1) from grid neutralization. */
+@media (min-width: 680px) {
+  .property-result-list div.col-sm-4 {
+    padding-right: 12px !important;
+  }
+  .property-result-list div.col-sm-8 {
+    padding-left: 12px !important;
+  }
+}
+@media (min-width: 768px) {
+  .property-result-list div.col-sm-4 {
+    padding-right: 12px !important;
+  }
+  .property-result-list div.col-sm-8 {
+    padding-left: 12px !important;
+  }
+}
+@media (min-width: 992px) {
+  .property-result-list div.col-sm-4 {
+    padding-right: 24px !important;
+  }
+  .property-result-list div.col-sm-8 {
+    padding-left: 24px !important;
+  }
+}
+
+/* Property detail — 50/50 columns, split from 680px+
+   Outer edges inherit container padding via .row/-margin + .col/+padding system.
+   Inner gap between columns: 24px (12px each side). */
+@media (min-width: 680px) {
+  #content .col-md-4.pull-right-md + .col-md-8,
+  #content .col-md-8 {
+    width: 50% !important;
+    padding-left: 0 !important;
+    padding-right: 12px !important;
+  }
+
+  #content .col-md-4,
+  #content .col-md-4.pull-right-md {
+    width: 50% !important;
+    padding-left: 12px !important;
+    padding-right: 0 !important;
+    order: 2 !important;
+  }
+
+  #content > .row,
+  #content .col-md-12 > .row {
+    display: flex !important;
+    flex-wrap: wrap !important;
+  }
+
+  #content .col-md-8 {
+    order: 1 !important;
+  }
 }
 
 #content .col-md-8 > .navbar-cabin {
@@ -266,32 +613,49 @@ p .btn-group {
 }
 
 #content .col-md-4.pull-right-md {
-  border: 1px solid #000000 !important;
+  border: 3px solid #000000 !important;
   background: #ffffff !important;
   background-color: #ffffff !important;
   padding-top: 30px !important;
-  padding-left: 30px !important;
+  padding-left: 50px !important;
+  padding-right: 30px !important;
   padding-bottom: 35px !important;
 }
 
 /* ============================================
-   TYPOGRAPHY
+   TYPOGRAPHY — match reset.club/n
+   Property names: 36px/700 (matches collection link rows)
    ============================================ */
 h1.page-header,
 h2.media-heading,
 h2.media-heading a {
   font-weight: 700 !important;
-  font-size: 30px !important;
-  letter-spacing: 0 !important;
+  font-size: 36px !important;
+  letter-spacing: normal !important;
+  line-height: 1.2 !important;
 }
 
+/* Property name underline — matches reset.club/n link-row borders */
+h2.media-heading {
+  border-bottom: 3px solid #000000 !important;
+  padding-bottom: 12px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Property page hero name — T2 treatment matching reset.club/n */
 h1.page-header {
+  font-size: clamp(48px, 10vw, 108px) !important;
+  font-weight: 700 !important;
+  letter-spacing: -0.03em !important;
+  line-height: 1 !important;
   margin-left: 0 !important;
   padding-left: 0 !important;
+  margin-top: 16px !important;
+  margin-bottom: 24px !important;
 }
 
 h2.page-header {
-  text-transform: uppercase !important;
+  text-transform: capitalize !important;
   font-weight: 700 !important;
   margin-left: 0 !important;
   padding-left: 0 !important;
@@ -301,11 +665,53 @@ h2.page-header {
   padding-left: 0 !important;
 }
 
-/* Property page h2 headings - all caps headline treatment */
-h2.proppage {
-  text-transform: uppercase !important;
+/* Property page lists — tighter indent (exclude nav and Bootstrap component lists) */
+#content ul:not(.nav):not(.navbar-nav):not(.list-group) {
+  padding-left: 20px !important;
+}
+
+/* Amenities list-group — no indent, no column padding */
+.amenities-detail ul.list-group,
+#amenities-detail ul.list-group {
+  padding-left: 0 !important;
+}
+
+.amenities-detail .list-group > li,
+#amenities-detail .list-group > li,
+.amenities-detail li[class*="col-"],
+#amenities-detail li[class*="col-"],
+#content .amenities-detail li[class*="col-"],
+#content #amenities-detail li[class*="col-"] {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* Property page h2 headings */
+h2.proppage,
+h2.page-header {
+  text-transform: capitalize !important;
+  font-size: 36px !important;
+  line-height: 0.9 !important;
   font-weight: 700 !important;
   letter-spacing: normal !important;
+  border-bottom: 3px solid #000000 !important;
+  padding-bottom: 12px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Property card details on listing page */
+.media-body p,
+.media-body .listing-result-details {
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+}
+
+/* Bedroom/bathroom summary line */
+.listing-result-details,
+.property-details {
+  font-size: 18px !important;
+  font-weight: 500 !important;
 }
 
 /* ============================================
@@ -313,12 +719,12 @@ h2.proppage {
    ============================================ */
 .row.search-bar {
   margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+  padding-bottom: 10px !important;
 }
 
 .search-bar {
   margin-bottom: 0 !important;
-  padding-bottom: 0 !important;
+  padding-bottom: 10px !important;
 }
 
 .search-bar-container {
@@ -326,7 +732,19 @@ h2.proppage {
   padding-bottom: 0 !important;
 }
 
-/* Search bar form controls - match button styling */
+/* Neutralize double-container nesting: .incarousel-search-bar.container sits inside
+   #content.container, doubling the padding. Zero it so search bar aligns with listings. */
+.incarousel-search-bar.container {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+#search-bar-widget.row.search-bar {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+}
+
+/* Search bar form controls - match widget.css styling */
 select#Bedrooms.form-control,
 select#Guests.form-control,
 input#ArrivalDate.form-control,
@@ -334,14 +752,17 @@ input#DepartureDate.form-control,
 .input-group.date .form-control,
 .search-bar select.form-control,
 .search-bar input.form-control {
-  font-size: 14px !important;
+  font-size: 18px !important;
   font-weight: 700 !important;
   color: #000000 !important;
   text-transform: uppercase !important;
-  border: 1px solid #000000 !important;
+  border: 3px solid #000000 !important;
   border-color: #000000 !important;
   background: transparent !important;
   background-color: transparent !important;
+  height: 44px !important;
+  padding: 0 8px !important;
+  line-height: 38px !important;
 }
 
 /* Add padding to select dropdowns for arrow spacing */
@@ -361,13 +782,15 @@ input#DepartureDate.form-control,
 /* Merge date input and calendar icon into one box */
 .search-bar .input-group.date,
 .input-group.date {
-  border: 1px solid #000000 !important;
+  border: 3px solid #000000 !important;
+  height: 44px !important;
 }
 
 .search-bar .input-group.date input.form-control,
 .input-group.date input#ArrivalDate,
 .input-group.date input#DepartureDate {
   border: none !important;
+  height: 38px !important;
 }
 
 .search-bar .input-group.date .input-group-btn,
@@ -382,6 +805,7 @@ input#DepartureDate.form-control,
   border: none !important;
   background: transparent !important;
   background-color: transparent !important;
+  height: 38px !important;
 }
 
 /* ============================================
@@ -408,10 +832,58 @@ input#DepartureDate.form-control,
 }
 
 /* ============================================
+   ALERT BOXES — 3px border matching text color
+   ============================================ */
+.alert,
+.alert-info,
+.alert-warning,
+.alert-success,
+.alert-danger {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  border: 3px solid currentColor !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #000000 !important;
+}
+
+/* ============================================
+   AVAILABILITY CALENDAR
+   ============================================ */
+
+/* Calendar styles are in widget.css (calendar is inside OwnerRez iframe) */
+
+/* Hide the Availability section on property pages — heading, calendar
+   widget, and TOC link. Scoped narrowly so other ownerrez-widget
+   instances (Book Now, search bar) are unaffected. */
+h2#availability,
+h2#availability + .ownerrez-widget[data-widget-type="Multiple Month Calendar"] {
+  display: none !important;
+}
+
+.navbar-cabin li:has(> a[href="#availability"]) {
+  display: none !important;
+}
+
+/* Fallback for browsers without :has() — collapses link text */
+.navbar-cabin a[href="#availability"] {
+  display: none !important;
+}
+
+/* ============================================
    AMENITIES / PROPERTY TEXT
    ============================================ */
+.about-the-owner {
+  display: none !important;
+}
+
+.amenity-summary-size {
+  font-weight: 700 !important;
+}
+
 .amenity-summary-amenities {
-  padding-right: 15% !important;
+  display: none !important;
 }
 
 .media-body {
@@ -421,7 +893,7 @@ input#DepartureDate.form-control,
 /* Amenities table styling */
 .amenities-detail tr,
 #amenities-detail tr {
-  border-bottom: 1px solid #000000 !important;
+  border-bottom: 3px solid #000000 !important;
   background: none !important;
   background-color: transparent !important;
 }
@@ -437,9 +909,9 @@ input#DepartureDate.form-control,
 /* ============================================
    RESPONSIVE - TABLET
    ============================================ */
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: 991px) and (min-width: 680px) {
   .amenity-summary-amenities {
-    padding-right: 10% !important;
+    display: none !important;
   }
 
   .media-body {
@@ -448,6 +920,19 @@ input#DepartureDate.form-control,
 
   div.header-logo::after {
     display: none !important;
+  }
+
+  /* Force two-column layout in tablet range (Bootstrap col-md collapses at 992px) */
+  #content .col-md-8,
+  #content .col-md-4.pull-right-md + .col-md-8 {
+    width: 50% !important;
+    float: left !important;
+  }
+
+  #content .col-md-4,
+  #content .col-md-4.pull-right-md {
+    width: 50% !important;
+    float: right !important;
   }
 }
 
@@ -470,12 +955,114 @@ div.header-logo::after {
    RESPONSIVE - MOBILE
    ============================================ */
 @media (max-width: 767px) {
+
+  /* ---- Consistent 16px mobile padding (matches reset.club/n) ---- */
+
+  /* Bootstrap container override */
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Row margins zeroed globally — no mobile override needed */
+
+  /* Native header is hidden — injected .reset-nav handles all header display */
+
+  /* Search bar alignment */
+  .search-bar .container,
+  .row.search-bar {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Property card content */
+  .property-result-list {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Images full-bleed within padded container */
+  .thumbnail {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  /* Property page: content column gets 16px padding on mobile */
+  #content .col-md-8 {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  /* Column padding handled by container — no extra padding on columns */
+  #content .col-md-12 {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* Sidebar booking box on mobile */
+  #content .col-md-4,
+  #content .col-md-4.pull-right-md {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 32px !important;
+  }
+
+  /* Property page h1 — T2 treatment, tight gap to carousel */
+  h1.page-header {
+    font-size: clamp(36px, 12vw, 72px) !important;
+    margin-bottom: 8px !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* Property page carousel — square on mobile */
+  .or-carousel {
+    aspect-ratio: 1 / 1 !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  .or-carousel .carousel-inner {
+    height: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    bottom: 0 !important;
+  }
+
+  .or-carousel .item {
+    height: 100% !important;
+    padding-bottom: 0 !important;
+  }
+
+  .or-carousel .fill {
+    height: 100% !important;
+    width: 100% !important;
+    position: absolute !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+
+  .or-carousel .fill img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center !important;
+  }
+
+  /* Hide desktop photo grid on mobile — carousel shows instead */
+  .multiproperty-grid-wrapper {
+    display: none !important;
+  }
+
   .amenity-summary-amenities {
-    padding-right: 5% !important;
+    display: none !important;
   }
 
   .media-body {
-    padding-right: 5% !important;
+    padding-right: 0 !important;
   }
 
   /* Hero carousel - force 4:5 aspect ratio */

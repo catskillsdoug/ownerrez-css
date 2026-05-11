@@ -1,32 +1,209 @@
 /* OwnerRez Widget CSS Overrides */
-/* Import via: @import url("https://reset-club-css.netlify.app/widget.css"); */
+/* Loaded inside booking/inquiry widget iframe via OwnerRez custom CSS */
 
-/* Labels - uppercase */
+/* ============================================
+   GLOBAL RESETS
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  line-height: 1.5 !important;
+  color: #000000 !important;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+}
+
+p, td, th, li, a {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+}
+
+/* Divs — Inter but not icon/star containers */
+div:not([class*="star"]):not([class*="icon"]):not(.input-group-addon) {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+}
+
+/* Spans — Inter but not icon/star spans */
+span:not(.fa):not(.glyphicon):not([class*="fa-"]):not([class*="icon"]):not([class*="star"]):not(.caret) {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+}
+
+/* HR — 3px black, consistent with all other borders */
+hr {
+  border: none !important;
+  border-top: 3px solid #000000 !important;
+  background: transparent !important;
+  height: 0 !important;
+}
+
+/* ============================================
+   LABELS
+   ============================================ */
 label {
-  text-transform: uppercase !important;
-}
-
-/* Button border color override */
-.form-control,
-.input-group-addon,
-.btn-default,
-button.btn-default,
-.btn.btn-default {
-  border-color: #000 !important;
-}
-
-/* Book Now / Send Inquiry buttons */
-button.btn.btn-default.btn-block,
-.btn-default {
-  font-size: 14px !important;
+  font-family: Inter, system-ui, sans-serif !important;
   font-weight: 700 !important;
-  padding: 6px 12px !important;
-  border: 1px solid #000000 !important;
-  border-color: #000000 !important;
+  font-size: 18px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  color: #000000 !important;
+}
+
+/* Date labels — hide "Date" suffix, show only "Arrival" / "Departure" */
+.date-holder label[for="ArrivalDate"],
+.date-holder label[for="DepartureDate"],
+label[for="ArrivalDate"],
+label[for="DepartureDate"] {
+  font-size: 0 !important;
+  line-height: 0 !important;
+}
+
+label[for="ArrivalDate"]::before {
+  content: "ARRIVAL" !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  color: #000000 !important;
+}
+
+label[for="DepartureDate"]::before {
+  content: "DEPARTURE" !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  color: #000000 !important;
+}
+
+/* ============================================
+   FORM CONTROLS — 3px borders, Inter bold
+   ============================================ */
+.form-control,
+input.form-control,
+select.form-control {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  height: 48px !important;
+  padding: 10px 12px !important;
+}
+
+/* Select dropdowns — larger arrow, more spacing from edge */
+select.form-control {
+  padding-right: 36px !important;
+  -webkit-appearance: none !important;
+  -moz-appearance: none !important;
+  appearance: none !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23000000' stroke-width='3' stroke-linecap='square'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 12px center !important;
+  background-size: 16px !important;
+}
+
+textarea.form-control {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  font-size: 18px !important;
+  color: #000000 !important;
+  border: 3px solid #000000 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  height: auto !important;
+  padding: 10px 12px !important;
+}
+
+.form-control::placeholder {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  color: #000000 !important;
+  opacity: 0.5 !important;
+}
+
+.form-control::-webkit-input-placeholder {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-weight: 500 !important;
+  color: #000000 !important;
+  opacity: 0.5 !important;
+}
+
+/* ============================================
+   INPUT GROUPS — single outer border, no inner doubles
+   Date inputs + calendar icon, discount + refresh icon,
+   email + icon, phone + flag + input
+   ============================================ */
+.input-group {
+  border: 3px solid #000000 !important;
+  height: 48px !important;
+}
+
+/* Remove individual borders from items inside input-group */
+.input-group .form-control,
+.input-group input.form-control,
+.input-group .input-group-addon,
+.input-group .input-group-btn,
+.input-group .input-group-btn .btn,
+.input-group .input-group-btn a.btn {
+  border: none !important;
+  border-color: transparent !important;
+  height: 42px !important;
+}
+
+/* Calendar/icon buttons — vertically center the icon, no margin */
+.input-group .input-group-btn .btn,
+.input-group .input-group-btn a.btn {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 12px !important;
+  margin-bottom: 0 !important;
+  margin-top: 0 !important;
+  width: auto !important;
+}
+
+/* Phone input — pad left past the iti flag overlay (46px flag + 12px gap) */
+input#Phone_Original.form-control,
+.iti input.form-control {
+  padding-left: 58px !important;
+}
+
+/* ============================================
+   BUTTONS — 3px borders, Inter bold
+   ============================================ */
+button.btn.btn-default.btn-block,
+.btn-default,
+.btn.btn-default,
+button.btn-default {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  height: 48px !important;
+  padding: 10px 12px !important;
+  border: 3px solid #000000 !important;
   background: transparent !important;
   background-color: transparent !important;
   color: #000000 !important;
   text-transform: uppercase !important;
+  letter-spacing: 0.02em !important;
+  width: 100% !important;
+  display: block !important;
+  margin-bottom: 8px !important;
+  text-align: center !important;
 }
 
 /* Button hover states */
@@ -47,29 +224,20 @@ button.btn.btn-default.btn-block:active,
 
 /* ============================================
    CALENDAR / DATEPICKER
-   Common selectors to try:
-   - .datepicker
-   - .datepicker-dropdown
-   - .datepicker table
-   - .datepicker td
-   - .datepicker td.day
-   - .datepicker th
-   - .datepicker .datepicker-switch
-   - .datepicker .prev, .datepicker .next
-   - .day.disabled (blocked dates)
-   - .day.active (selected dates)
    ============================================ */
 
 /* Calendar container */
 .datepicker,
 .datepicker-dropdown {
-  border: 1px solid #000000 !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  border: 3px solid #000000 !important;
   border-radius: 0 !important;
 }
 
 /* Calendar header (month/year) */
 .datepicker .datepicker-switch,
 .datepicker th {
+  font-family: Inter, system-ui, sans-serif !important;
   font-weight: 700 !important;
   text-transform: uppercase !important;
 }
@@ -77,10 +245,12 @@ button.btn.btn-default.btn-block:active,
 /* Day cells */
 .datepicker td,
 .datepicker td.day {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-weight: 500 !important;
   border-radius: 0 !important;
 }
 
-/* Blocked dates (red background in screenshot) */
+/* Blocked dates */
 .datepicker td.day.disabled,
 .datepicker td.disabled {
   background-color: #e57373 !important;
@@ -111,4 +281,389 @@ button.btn.btn-default.btn-block:active,
 .datepicker .next::after {
   content: "→" !important;
   font-size: 16px !important;
+}
+
+/* ============================================
+   ALERT BOXES — 3px border matching text color
+   ============================================ */
+.alert,
+.alert-info,
+.alert-warning,
+.alert-success,
+.alert-danger {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 500 !important;
+  border: 3px solid currentColor !important;
+  background: transparent !important;
+  background-color: transparent !important;
+  color: #000000 !important;
+}
+
+/* ============================================
+   AVAILABILITY CALENDAR
+   ============================================ */
+
+/* Month titles — bold with 3px underline */
+h4.flex-calendar-month-title {
+  font-weight: 700 !important;
+  font-size: 18px !important;
+  border-bottom: 3px solid #000000 !important;
+  padding-bottom: 6px !important;
+}
+
+/* Calendar day headers — bold */
+.flex-calendar th {
+  font-weight: 700 !important;
+}
+
+/* Calendar full width, fixed column layout for equal widths */
+#calendar.flex-calendar,
+.flex-calendar {
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+.flex-calendar table {
+  width: 100% !important;
+  table-layout: fixed !important;
+}
+
+/* Day headers */
+.flex-calendar th {
+  text-align: center !important;
+  padding: 4px !important;
+}
+
+/* Day cells — equal width columns, padding creates square-ish proportion */
+.flex-calendar tbody td {
+  text-align: center !important;
+  vertical-align: middle !important;
+  padding: 2px !important;
+}
+
+/* Booking container — square then circular.
+   td stretches child to full width, so use inline-block + text-align on td. */
+.flex-calendar tbody td {
+  text-align: center !important;
+}
+
+.flex-calendar .booking-container {
+  border-radius: 50% !important;
+  padding: 6px !important;
+  width: 38px !important;
+  height: 38px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+}
+
+.flex-calendar .flex-calendar-booking-start,
+.flex-calendar .flex-calendar-booking-middle,
+.flex-calendar .flex-calendar-booking-end {
+  background: rgb(76, 115, 76) !important;
+  border-radius: 50% !important;
+}
+
+.flex-calendar .flex-calendar-booking-start.flex-calendar-out-of-range,
+.flex-calendar .flex-calendar-booking-middle.flex-calendar-out-of-range,
+.flex-calendar .flex-calendar-booking-end.flex-calendar-out-of-range {
+  background: rgb(140, 165, 140) !important;
+  border-radius: 50% !important;
+}
+
+/* Today — circle */
+.flex-calendar .flex-calendar-today {
+  background: rgb(255, 255, 204) !important;
+  border-radius: 50% !important;
+}
+
+/* Holiday — circle */
+.flex-calendar .flex-calendar-holiday {
+  background: rgb(222, 235, 246) !important;
+  border-radius: 50% !important;
+}
+
+/* Day content text — clean, no text-shadow */
+.flex-calendar .day-content {
+  text-shadow: none !important;
+}
+
+.flex-calendar .flex-calendar-booking-middle .day-content,
+.flex-calendar .flex-calendar-booking-start .day-content,
+.flex-calendar .flex-calendar-booking-end .day-content {
+  color: #ffffff !important;
+  text-shadow: none !important;
+  background: transparent !important;
+  border-radius: 0 !important;
+}
+
+@media (max-width: 768px) {
+  h4.flex-calendar-month-title {
+    font-size: 24px !important;
+  }
+}
+
+/* Today nav bar — horizontal layout, thin borders */
+.flex-calendar-nav .input-group,
+div[data-role="month-navigator"].input-group {
+  display: flex !important;
+  flex-direction: row !important;
+  border: none !important;
+  height: auto !important;
+  width: auto !important;
+}
+
+.flex-calendar-nav .input-group .btn,
+div[data-role="month-navigator"] .btn {
+  border: 1px solid #000000 !important;
+  height: 32px !important;
+  padding: 4px 10px !important;
+  font-size: 14px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: auto !important;
+}
+
+/* Previous/Next arrows — use → style */
+.flex-calendar-nav .btn i,
+.flex-calendar-nav .btn .glyphicon {
+  font-size: 0 !important;
+  display: inline-block !important;
+}
+
+.flex-calendar-nav .btn i::after,
+.flex-calendar-nav .btn .glyphicon::after {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+}
+
+.flex-calendar-nav .btn:first-child i::after,
+.flex-calendar-nav .btn:first-child .glyphicon::after {
+  content: '\2190' !important;
+}
+
+.flex-calendar-nav .btn:last-child i::after,
+.flex-calendar-nav .btn:last-child .glyphicon::after {
+  content: '\2192' !important;
+}
+
+/* ============================================
+   QUOTE/PRICE BOX — RESET brand colors
+   ============================================ */
+/* Price summary — outer wrapper has no border */
+.booknow-quote-info {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  padding: 16px 0 !important;
+  text-align: center !important;
+}
+
+/* Alert inside quote-info — this gets the border */
+.booknow-quote-info .alert,
+.booknow-quote-info .alert-info {
+  background: #fcf6e9 !important;
+  background-color: #fcf6e9 !important;
+  border: 3px solid #000000 !important;
+  padding: 16px !important;
+  color: #000000 !important;
+}
+
+/* Quote price line — 36px bold (T3 Heading) for total, nights, and connecting text */
+span.h1.booknow-quote-total.booknow-quote-total,
+span.h1.booknow-quote-nights.booknow-quote-nights,
+span.booknow-quote-word.booknow-quote-word {
+  font-size: 36px !important;
+  font-weight: 700 !important;
+  color: #000000 !important;
+  line-height: 1.15 !important;
+}
+
+/* "amounts in USD" — T6 Micro: 9px/1.5, bold, uppercase, 0.05em
+   Specificity (0,4,1) to beat div:not():not():not() at (0,3,1) */
+div.booknow-quote-currency.text-muted.text-muted {
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 9px !important;
+  font-weight: 700 !important;
+  line-height: 1.5 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  color: #000000 !important;
+}
+
+/* Warning/error state — when nights don't meet minimum */
+.booknow-quote-info.has-warning,
+.booknow-quote-info.alert-warning,
+.booknow-quote-warning {
+  background: #fff3cd !important;
+  background-color: #fff3cd !important;
+  border-color: #9c8336 !important;
+  color: #000000 !important;
+}
+
+/* Error state */
+.booknow-quote-info.has-error,
+.booknow-quote-info.alert-danger,
+.booknow-quote-error {
+  background: #fce9e9 !important;
+  background-color: #fce9e9 !important;
+  border-color: #ff551e !important;
+  color: #000000 !important;
+}
+
+/* Success/valid state */
+.booknow-quote-info.has-success,
+.booknow-quote-info.alert-success {
+  background: #e9fcf0 !important;
+  background-color: #e9fcf0 !important;
+  border-color: #019740 !important;
+  color: #000000 !important;
+}
+
+/* Charge Details table */
+.booknow-quote-details {
+  background: transparent !important;
+  background-color: transparent !important;
+  text-align: left !important;
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+.booknow-quote-details table {
+  width: 100% !important;
+}
+
+.booknow-quote-details td,
+.booknow-quote-details th {
+  text-align: left !important;
+  border-bottom: 3px solid #000000 !important;
+  padding: 8px 0 !important;
+}
+
+/* Colspan header (Charge Details) — left-align, less top space */
+.booknow-quote-details th[colspan] {
+  text-align: left !important;
+  padding-top: 0px !important;
+}
+
+/* Right-align the amounts column (only when not colspan) */
+.booknow-quote-details td:last-child:not(:first-child),
+.booknow-quote-details th:last-child:not(:first-child):not([colspan]) {
+  text-align: right !important;
+}
+
+/* SEE DETAILS button inside quote box */
+.booknow-quote-info .btn,
+.booknow-quote-info button,
+.booknow-quote-info a.btn {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: 3px solid #000000 !important;
+  color: #000000 !important;
+  font-weight: 700 !important;
+  width: 100% !important;
+  margin-top: 8px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 48px !important;
+}
+
+/* ============================================
+   FORM FIELD BACKGROUNDS — kill OwnerRez tints
+   ============================================ */
+/* Remove all green/blue/colored backgrounds from form fields */
+.form-control,
+input.form-control,
+select.form-control,
+textarea.form-control,
+.input-group,
+.input-group .form-control,
+.input-group .input-group-addon,
+.input-group .input-group-btn .btn {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Vertical alignment — center text in inputs */
+.form-control,
+input.form-control {
+  display: flex !important;
+  align-items: center !important;
+}
+
+/* RESERVE / SEND INQUIRY buttons — RESET brand treatment */
+button.btn.btn-default.btn-block {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* "SEND INQUIRY" → "INQUIRE"
+   Specificity must beat button.btn.btn-default.btn-block (0,3,1) */
+.inquiry-button-holder button.btn.btn-default.btn-block[value="Inquire"],
+button.btn.btn-default.btn-block[value="Inquire"] {
+  font-size: 0 !important;
+  color: transparent !important;
+  height: 48px !important;
+  padding: 0 12px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.inquiry-button-holder button.btn.btn-default.btn-block[value="Inquire"]::before,
+button.btn.btn-default.btn-block[value="Inquire"]::before {
+  content: "INQUIRE" !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.02em !important;
+  color: #000000 !important;
+}
+
+button.btn.btn-default.btn-block[value="Inquire"]:hover::before {
+  color: #ffffff !important;
+}
+
+button.btn.btn-default.btn-block[value="Inquire"]:active::before {
+  color: #ffffff !important;
+}
+
+/* Review pagination arrows — replace FA icons with ← → */
+.fa-long-arrow-left,
+.fa-long-arrow-right,
+.fa-arrow-left,
+.fa-arrow-right,
+.fa-chevron-left,
+.fa-chevron-right {
+  font-size: 0 !important;
+  display: inline-block !important;
+}
+
+.fa-long-arrow-left::before,
+.fa-arrow-left::before,
+.fa-chevron-left::before {
+  content: '\2190' !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
+}
+
+.fa-long-arrow-right::before,
+.fa-arrow-right::before,
+.fa-chevron-right::before {
+  content: '\2192' !important;
+  font-family: Inter, system-ui, sans-serif !important;
+  font-size: 18px !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+  color: #000000 !important;
 }
